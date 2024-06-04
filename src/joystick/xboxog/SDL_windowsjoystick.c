@@ -833,6 +833,30 @@ SDL_JoystickDriver SDL_WINDOWS_JoystickDriver = {
     WINDOWS_JoystickGetGamepadMapping
 };
 
+SDL_JoystickDriver SDL_XBOXOG_JoystickDriver = {
+    /*WINDOWS_JoystickInit,
+    WINDOWS_JoystickGetCount,
+    WINDOWS_JoystickDetect,
+    WINDOWS_JoystickGetDeviceName,
+    WINDOWS_JoystickGetDevicePath,
+    WINDOWS_JoystickGetDeviceSteamVirtualGamepadSlot,
+    WINDOWS_JoystickGetDevicePlayerIndex,
+    WINDOWS_JoystickSetDevicePlayerIndex,
+    WINDOWS_JoystickGetDeviceGUID,
+    WINDOWS_JoystickGetDeviceInstanceID,
+    WINDOWS_JoystickOpen,
+    WINDOWS_JoystickRumble,
+    WINDOWS_JoystickRumbleTriggers,
+    WINDOWS_JoystickGetCapabilities,
+    WINDOWS_JoystickSetLED,
+    WINDOWS_JoystickSendEffect,
+    WINDOWS_JoystickSetSensorsEnabled,
+    WINDOWS_JoystickUpdate,
+    WINDOWS_JoystickClose,
+    WINDOWS_JoystickQuit,
+    WINDOWS_JoystickGetGamepadMapping*/
+};
+
 /* Ends C function definitions when using C++ */
 #ifdef __cplusplus
 }

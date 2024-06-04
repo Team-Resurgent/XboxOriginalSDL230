@@ -19,50 +19,31 @@
   3. This notice may not be removed or altered from any source distribution.
 */
 
+#include <xtl.h>
+
 #include "../../SDL_internal.h"
-#include "../../core/xboxog/SDL_xboxog.h"
 #include "../SDL_syslocale.h"
-
-typedef BOOL(WINAPI *pfnGetUserPreferredUILanguages)(DWORD, PULONG, WCHAR *, PULONG);
-#ifndef MUI_LANGUAGE_NAME
-#define MUI_LANGUAGE_NAME 0x8
-#endif
-
-static pfnGetUserPreferredUILanguages pGetUserPreferredUILanguages = NULL;
-static HMODULE kernel32 = 0;
-
-/* this is the fallback for WinXP...one language, not a list. */
-static void SDL_SYS_GetPreferredLocales_winxp(char *buf, size_t buflen)
-{
-    char lang[16];
-    char country[16];
-
-    const int langrc = GetLocaleInfoA(LOCALE_USER_DEFAULT,
-                                      LOCALE_SISO639LANGNAME,
-                                      lang, sizeof(lang));
-
-    const int ctryrc = GetLocaleInfoA(LOCALE_USER_DEFAULT,
-                                      LOCALE_SISO3166CTRYNAME,
-                                      country, sizeof(country));
-
-    /* Win95 systems will fail, because they don't have LOCALE_SISO*NAME ... */
-    if (langrc == 0) {
-        SDL_SetError("Couldn't obtain language info");
-    } else {
-        (void)SDL_snprintf(buf, buflen, "%s%s%s", lang, ctryrc ? "_" : "", ctryrc ? country : "");
-    }
-}
 
 void SDL_SYS_GetPreferredLocales(char *buf, size_t buflen)
 {
-    if (!kernel32) {
-        kernel32 = GetModuleHandle(TEXT("kernel32.dll"));
-        if (kernel32) {
-            pGetUserPreferredUILanguages = (pfnGetUserPreferredUILanguages)GetProcAddress(kernel32, "GetUserPreferredUILanguages");
-        }
+    const char *xboxog_locales[] = {
+		"en_US",
+        "ja_JP",
+        "de_DE",
+		"fr_FR",
+        "es_ES",
+        "it_IT",
+        "ko_KR",
+        "zh_CN",
+        "pt_PT",
+    };
+
+    DWORD language = XGetLanguage();
+    if (language < XC_LANGUAGE_ENGLISH || language > XC_LANGUAGE_PORTUGUESE) {
+        language = XC_LANGUAGE_ENGLISH; // default to english
     }
 
-    SDL_SYS_GetPreferredLocales_winxp(buf, buflen); /* this is always available */
+    SDL_strlcpy(buf, xboxog_locales[language - 1], buflen);
 }
 
 /* vi: set ts=4 sw=4 expandtab: */

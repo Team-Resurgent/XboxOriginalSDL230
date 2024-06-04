@@ -58,6 +58,9 @@ static SDL_JoystickDriver *SDL_joystick_drivers[] = {
 #ifdef SDL_JOYSTICK_RAWINPUT /* Before WINDOWS_ driver, as WINDOWS wants to check if this driver is handling things */
     &SDL_RAWINPUT_JoystickDriver,
 #endif
+#if defined(SDL_JOYSTICK_XBOXOG)
+    &SDL_XBOXOG_JoystickDriver,
+#endif
 #if defined(SDL_JOYSTICK_DINPUT) || defined(SDL_JOYSTICK_XINPUT) /* Before WGI driver, as WGI wants to check if this driver is handling things */
     &SDL_WINDOWS_JoystickDriver,
 #endif
@@ -107,7 +110,7 @@ static SDL_JoystickDriver *SDL_joystick_drivers[] = {
     &SDL_N3DS_JoystickDriver
 #endif
 #if defined(SDL_JOYSTICK_DUMMY) || defined(SDL_JOYSTICK_DISABLED)
-        &SDL_DUMMY_JoystickDriver
+    &SDL_DUMMY_JoystickDriver
 #endif
 };
 
