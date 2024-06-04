@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="SDL2"
+	ProjectGUID="{037532C7-90D6-4C6C-9585-0F9E79879C81}"
+	Keyword="XboxProj">
+	<Platforms>
+		<Platform
+			Name="Xbox"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Xbox"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
+				PreprocessorDefinitions="_DEBUG;_XBOX;_LIB"
+				MinimalRebuild="TRUE"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				EnableEnhancedInstructionSet="1"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderFile="$(OutDir)/$(ProjectName).pch"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/$(ProjectName).lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Profile|Xbox"
+			OutputDirectory="Profile"
+			IntermediateDirectory="Profile"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="3"
+				OmitFramePointers="TRUE"
+				OptimizeForProcessor="2"
+				PreprocessorDefinitions="NDEBUG;_XBOX;PROFILE;_LIB"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="TRUE"
+				EnableFunctionLevelLinking="TRUE"
+				EnableEnhancedInstructionSet="1"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderFile="$(OutDir)/$(ProjectName).pch"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/$(ProjectName).lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Profile_FastCap|Xbox"
+			OutputDirectory="Profile_FastCap"
+			IntermediateDirectory="Profile_FastCap"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="3"
+				OmitFramePointers="TRUE"
+				OptimizeForProcessor="2"
+				PreprocessorDefinitions="NDEBUG;_XBOX;PROFILE;FASTCAP;_LIB"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="TRUE"
+				EnableFunctionLevelLinking="TRUE"
+				EnableEnhancedInstructionSet="1"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderFile="$(OutDir)/$(ProjectName).pch"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"
+				FastCAP="TRUE"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/$(ProjectName).lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Xbox"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="4"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="3"
+				OmitFramePointers="TRUE"
+				OptimizeForProcessor="2"
+				PreprocessorDefinitions="NDEBUG;_XBOX;_LIB"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="TRUE"
+				EnableFunctionLevelLinking="TRUE"
+				EnableEnhancedInstructionSet="1"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderFile="$(OutDir)/$(ProjectName).pch"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/$(ProjectName).lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release_LTCG|Xbox"
+			OutputDirectory="Release_LTCG"
+			IntermediateDirectory="Release_LTCG"
+			ConfigurationType="4"
+			CharacterSet="2"
+			WholeProgramOptimization="TRUE">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="3"
+				OmitFramePointers="TRUE"
+				OptimizeForProcessor="2"
+				PreprocessorDefinitions="NDEBUG;_XBOX;LTCG;_LIB"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="TRUE"
+				EnableFunctionLevelLinking="TRUE"
+				EnableEnhancedInstructionSet="1"
+				UsePrecompiledHeader="0"
+				PrecompiledHeaderFile="$(OutDir)/$(ProjectName).pch"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="FALSE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)/$(ProjectName).lib"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+				<File RelativePath="..\..\src\SDL_guid.c"></File>
+				<File RelativePath="..\..\src\SDL.c"></File>
+				<File RelativePath="..\..\src\SDL_assert.c"></File>
+				<File RelativePath="..\..\src\SDL_dataqueue.c"></File>
+				<File RelativePath="..\..\src\SDL_list.c"></File>
+				<File RelativePath="..\..\src\SDL_error.c"></File>
+				<File RelativePath="..\..\src\SDL_hints.c"></File>
+				<File RelativePath="..\..\src\SDL_log.c"></File>
+				<File RelativePath="..\..\src\SDL_utils.c"></File>
+			<Filter Name="atomic" Filter="">
+				<File RelativePath="..\..\src\atomic\SDL_atomic.c"></File>
+				<File RelativePath="..\..\src\atomic\SDL_spinlock.c"></File>
+			</Filter>
+			<Filter Name="audio" Filter="">
+				<File RelativePath="..\..\src\audio\SDL_audio.c"></File>
+				<File RelativePath="..\..\src\audio\SDL_audiocvt.c"></File>
+				<File RelativePath="..\..\src\audio\SDL_audiodev.c"></File>
+				<File RelativePath="..\..\src\audio\SDL_audiotypecvt.c"></File>
+				<File RelativePath="..\..\src\audio\SDL_mixer.c"></File>
+				<File RelativePath="..\..\src\audio\SDL_wave.c"></File>
+				<Filter Name="directsound" Filter="">
+					<File RelativePath="..\..\src\audio\directsound\SDL_directsound.c"></File>
+				</Filter>
+				<Filter Name="disk" Filter="">
+					<File RelativePath="..\..\src\audio\disk\SDL_diskaudio.c"></File>
+				</Filter>
+				<Filter Name="dummy" Filter="">
+					<File RelativePath="..\..\src\audio\dummy\SDL_dummyaudio.c"></File>
+				</Filter>
+				<Filter Name="winmm" Filter="">
+					<File RelativePath="..\..\src\audio\winmm\SDL_winmm.c"></File>
+				</Filter>
+				<Filter Name="wasapi" Filter="">
+					<File RelativePath="..\..\src\audio\wasapi\SDL_wasapi.c"></File>
+					<File RelativePath="..\..\src\audio\wasapi\SDL_wasapi_win32.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="core" Filter="">
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\core\xboxog\SDL_hid.c"></File>
+					<File RelativePath="..\..\src\core\xboxog\SDL_immdevice.c"></File>
+					<File RelativePath="..\..\src\core\xboxog\SDL_windows.c"></File>
+					<File RelativePath="..\..\src\core\xboxog\SDL_xinput.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="cpuinfo" Filter="">
+				<File RelativePath="..\..\src\cpuinfo\SDL_cpuinfo.c"></File>
+			</Filter>
+			<Filter Name="dynapi" Filter="">
+				<File RelativePath="..\..\src\dynapi\SDL_dynapi.c"></File>
+			</Filter>
+			<Filter Name="events" Filter="">
+				<File RelativePath="..\..\src\events\SDL_clipboardevents.c"></File>
+				<File RelativePath="..\..\src\events\SDL_displayevents.c"></File>
+				<File RelativePath="..\..\src\events\SDL_dropevents.c"></File>
+				<File RelativePath="..\..\src\events\SDL_events.c"></File>
+				<File RelativePath="..\..\src\events\SDL_gesture.c"></File>
+				<File RelativePath="..\..\src\events\SDL_keyboard.c"></File>
+				<File RelativePath="..\..\src\events\SDL_mouse.c"></File>
+				<File RelativePath="..\..\src\events\SDL_quit.c"></File>
+				<File RelativePath="..\..\src\events\SDL_touch.c"></File>
+				<File RelativePath="..\..\src\events\SDL_windowevents.c"></File>
+			</Filter>
+			<Filter Name="file" Filter="">
+				<File RelativePath="..\..\src\file\SDL_rwops.c"></File>
+			</Filter>
+			<Filter Name="filesystem" Filter="">
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\filesystem\xboxog\SDL_sysfilesystem.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="haptic" Filter="">
+				<File RelativePath="..\..\src\haptic\SDL_haptic.c"></File>
+				<Filter Name="dummy" Filter="">
+					<File RelativePath="..\..\src\haptic\dummy\SDL_syshaptic.c"></File>
+				</Filter>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\haptic\xboxog\SDL_dinputhaptic.c"></File>
+					<File RelativePath="..\..\src\haptic\xboxog\SDL_windowshaptic.c"></File>
+					<File RelativePath="..\..\src\haptic\xboxog\SDL_xinputhaptic.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="hidapi" Filter="">
+				<File RelativePath="..\..\src\hidapi\SDL_hidapi.c"></File>
+			</Filter>
+			<Filter Name="joystick" Filter="">
+				<File RelativePath="..\..\src\joystick\controller_type.c"></File>
+				<File RelativePath="..\..\src\joystick\SDL_gamecontroller.c"></File>
+				<File RelativePath="..\..\src\joystick\SDL_joystick.c"></File>
+				<File RelativePath="..\..\src\joystick\SDL_steam_virtual_gamepad.c"></File>
+				<Filter Name="dummy" Filter="">
+					<File RelativePath="..\..\src\joystick\dummy\SDL_sysjoystick.c"></File>
+				</Filter>
+				<Filter Name="hidapi" Filter="">
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapijoystick.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_combined.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_gamecube.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_luna.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_ps3.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_ps4.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_ps5.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_rumble.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_shield.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_stadia.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_steam.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_steamdeck.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_switch.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_wii.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_xbox360.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_xbox360w.c"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_xboxone.c"></File>
+				</Filter>
+				<Filter Name="virtual" Filter="">
+					<File RelativePath="..\..\src\joystick\virtual\SDL_virtualjoystick.c"></File>
+				</Filter>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\joystick\xboxog\SDL_dinputjoystick.c"></File>
+					<File RelativePath="..\..\src\joystick\xboxog\SDL_rawinputjoystick.c"></File>
+					<File RelativePath="..\..\src\joystick\xboxog\SDL_windowsjoystick.c"></File>
+					<File RelativePath="..\..\src\joystick\xboxog\SDL_windows_gaming_input.c"></File>
+					<File RelativePath="..\..\src\joystick\xboxog\SDL_xinputjoystick.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="libm" Filter="">
+				<File RelativePath="..\..\src\libm\e_atan2.c"></File>
+				<File RelativePath="..\..\src\libm\e_exp.c"></File>
+				<File RelativePath="..\..\src\libm\e_fmod.c"></File>
+				<File RelativePath="..\..\src\libm\e_log.c"></File>
+				<File RelativePath="..\..\src\libm\e_log10.c"></File>
+				<File RelativePath="..\..\src\libm\e_pow.c"></File>
+				<File RelativePath="..\..\src\libm\e_rem_pio2.c"></File>
+				<File RelativePath="..\..\src\libm\e_sqrt.c"></File>
+				<File RelativePath="..\..\src\libm\k_cos.c"></File>
+				<File RelativePath="..\..\src\libm\k_rem_pio2.c"></File>
+				<File RelativePath="..\..\src\libm\k_sin.c"></File>
+				<File RelativePath="..\..\src\libm\k_tan.c"></File>
+				<File RelativePath="..\..\src\libm\s_atan.c"></File>
+				<File RelativePath="..\..\src\libm\s_copysign.c"></File>
+				<File RelativePath="..\..\src\libm\s_cos.c"></File>
+				<File RelativePath="..\..\src\libm\s_fabs.c"></File>
+				<File RelativePath="..\..\src\libm\s_floor.c"></File>
+				<File RelativePath="..\..\src\libm\s_scalbn.c"></File>
+				<File RelativePath="..\..\src\libm\s_sin.c"></File>
+				<File RelativePath="..\..\src\libm\s_tan.c"></File>
+			</Filter>
+			<Filter Name="loadso" Filter="">
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\loadso\xboxog\SDL_sysloadso.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="locale" Filter="">
+				<File RelativePath="..\..\src\locale\SDL_locale.c"></File>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\locale\xboxog\SDL_syslocale.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="misc" Filter="">
+				<File RelativePath="..\..\src\misc\SDL_url.c"></File>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\misc\xboxog\SDL_sysurl.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="power" Filter="">
+				<File RelativePath="..\..\src\power\SDL_power.c"></File>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\power\xboxog\SDL_syspower.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="render" Filter="">
+				<File RelativePath="..\..\src\render\SDL_d3dmath.c"></File>
+				<File RelativePath="..\..\src\render\SDL_render.c"></File>
+				<File RelativePath="..\..\src\render\SDL_yuv_sw.c"></File>
+				<Filter Name="direct3d11" Filter="">
+					<File RelativePath="..\..\src\render\direct3d11\SDL_shaders_d3d11.c"></File>
+					<File RelativePath="..\..\src\render\direct3d11\SDL_render_d3d11.c"></File>
+				</Filter>
+				<Filter Name="direct3d12" Filter="">
+					<File RelativePath="..\..\src\render\direct3d12\SDL_render_d3d12.c"></File>
+					<File RelativePath="..\..\src\render\direct3d12\SDL_shaders_d3d12.c"></File>
+				</Filter>
+				<Filter Name="direct3d" Filter="">
+					<File RelativePath="..\..\src\render\direct3d\SDL_render_d3d.c"></File>
+					<File RelativePath="..\..\src\render\direct3d\SDL_shaders_d3d.c"></File>
+				</Filter>
+				<Filter Name="opengl" Filter="">
+					<File RelativePath="..\..\src\render\opengl\SDL_render_gl.c"></File>
+					<File RelativePath="..\..\src\render\opengl\SDL_shaders_gl.c"></File>
+				</Filter>
+				<Filter Name="opengles2" Filter="">
+					<File RelativePath="..\..\src\render\opengles2\SDL_render_gles2.c"></File>
+					<File RelativePath="..\..\src\render\opengles2\SDL_shaders_gles2.c"></File>
+				</Filter>
+				<Filter Name="software" Filter="">
+					<File RelativePath="..\..\src\render\software\SDL_blendfillrect.c"></File>
+					<File RelativePath="..\..\src\render\software\SDL_blendline.c"></File>
+					<File RelativePath="..\..\src\render\software\SDL_blendpoint.c"></File>
+					<File RelativePath="..\..\src\render\software\SDL_drawline.c"></File>
+					<File RelativePath="..\..\src\render\software\SDL_drawpoint.c"></File>
+					<File RelativePath="..\..\src\render\software\SDL_render_sw.c"></File>
+					<File RelativePath="..\..\src\render\software\SDL_rotate.c"></File>
+					<File RelativePath="..\..\src\render\software\SDL_triangle.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="sensor" Filter="">
+				<File RelativePath="..\..\src\sensor\SDL_sensor.c"></File>
+				<Filter Name="dummy" Filter="">
+					<File RelativePath="..\..\src\sensor\dummy\SDL_dummysensor.c"></File>
+				</Filter>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\sensor\xboxog\SDL_windowssensor.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="stdlib" Filter="">
+				<File RelativePath="..\..\src\stdlib\SDL_crc16.c"></File>
+				<File RelativePath="..\..\src\stdlib\SDL_crc32.c"></File>
+				<File RelativePath="..\..\src\stdlib\SDL_getenv.c"></File>
+				<File RelativePath="..\..\src\stdlib\SDL_iconv.c"></File>
+				<File RelativePath="..\..\src\stdlib\SDL_malloc.c"></File>
+				<File RelativePath="..\..\src\stdlib\SDL_mslibc.c"></File>
+				<File RelativePath="..\..\src\stdlib\SDL_qsort.c"></File>
+				<File RelativePath="..\..\src\stdlib\SDL_stdlib.c"></File>
+				<File RelativePath="..\..\src\stdlib\SDL_string.c"></File>
+				<File RelativePath="..\..\src\stdlib\SDL_strtokr.c"></File>
+			</Filter>
+			<Filter Name="thread" Filter="">
+				<File RelativePath="..\..\src\thread\SDL_thread.c"></File>
+				<Filter Name="generic" Filter="">
+					<File RelativePath="..\..\src\thread\generic\SDL_syscond.c"></File>
+				</Filter>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\thread\xboxog\SDL_syscond_cv.c"></File>
+					<File RelativePath="..\..\src\thread\xboxog\SDL_sysmutex.c"></File>
+					<File RelativePath="..\..\src\thread\xboxog\SDL_syssem.c"></File>
+					<File RelativePath="..\..\src\thread\xboxog\SDL_systhread.c"></File>
+					<File RelativePath="..\..\src\thread\xboxog\SDL_systls.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="timer" Filter="">
+				<File RelativePath="..\..\src\timer\SDL_timer.c"></File>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\timer\xboxog\SDL_systimer.c"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="video" Filter="">
+				<File RelativePath="..\..\src\video\SDL_blit.c"></File>
+				<File RelativePath="..\..\src\video\SDL_blit_0.c"></File>
+				<File RelativePath="..\..\src\video\SDL_blit_1.c"></File>
+				<File RelativePath="..\..\src\video\SDL_blit_A.c"></File>
+				<File RelativePath="..\..\src\video\SDL_blit_auto.c"></File>
+				<File RelativePath="..\..\src\video\SDL_blit_copy.c"></File>
+				<File RelativePath="..\..\src\video\SDL_blit_N.c"></File>
+				<File RelativePath="..\..\src\video\SDL_blit_slow.c"></File>
+				<File RelativePath="..\..\src\video\SDL_bmp.c"></File>
+				<File RelativePath="..\..\src\video\SDL_clipboard.c"></File>
+				<File RelativePath="..\..\src\video\SDL_egl.c"></File>
+				<File RelativePath="..\..\src\video\SDL_fillrect.c"></File>
+				<File RelativePath="..\..\src\video\SDL_pixels.c"></File>
+				<File RelativePath="..\..\src\video\SDL_rect.c"></File>
+				<File RelativePath="..\..\src\video\SDL_RLEaccel.c"></File>
+				<File RelativePath="..\..\src\video\SDL_shape.c"></File>
+				<File RelativePath="..\..\src\video\SDL_stretch.c"></File>
+				<File RelativePath="..\..\src\video\SDL_surface.c"></File>
+				<File RelativePath="..\..\src\video\SDL_video.c"></File>
+				<File RelativePath="..\..\src\video\SDL_vulkan_utils.c"></File>
+				<File RelativePath="..\..\src\video\SDL_yuv.c"></File>
+				<Filter Name="dummy" Filter="">
+					<File RelativePath="..\..\src\video\dummy\SDL_nullevents.c"></File>
+					<File RelativePath="..\..\src\video\dummy\SDL_nullframebuffer.c"></File>
+					<File RelativePath="..\..\src\video\dummy\SDL_nullvideo.c"></File>
+				</Filter>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsclipboard.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsevents.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsframebuffer.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowskeyboard.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsmessagebox.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsmodes.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsmouse.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsopengl.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsopengles.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsshape.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsvideo.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsvulkan.c"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowswindow.c"></File>
+				</Filter>
+				<Filter Name="yuv2rgb" Filter="">
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_lsx.c"></File>
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_sse.c"></File>
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_std.c"></File>
+				</Filter>
+			</Filter>
+
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<Filter Name="API Headers" Filter="">
+				<File RelativePath="..\..\include\begin_code.h"></File>
+				<File RelativePath="..\..\include\close_code.h"></File>
+				<File RelativePath="..\..\include\SDL.h"></File>
+				<File RelativePath="..\..\include\SDL_assert.h"></File>
+				<File RelativePath="..\..\include\SDL_atomic.h"></File>
+				<File RelativePath="..\..\include\SDL_audio.h"></File>
+				<File RelativePath="..\..\include\SDL_bits.h"></File>
+				<File RelativePath="..\..\include\SDL_blendmode.h"></File>
+				<File RelativePath="..\..\include\SDL_clipboard.h"></File>
+				<File RelativePath="..\..\include\SDL_config.h"></File>
+				<File RelativePath="..\..\include\SDL_config_windows.h"></File>
+				<File RelativePath="..\..\include\SDL_copying.h"></File>
+				<File RelativePath="..\..\include\SDL_cpuinfo.h"></File>
+				<File RelativePath="..\..\include\SDL_egl.h"></File>
+				<File RelativePath="..\..\include\SDL_endian.h"></File>
+				<File RelativePath="..\..\include\SDL_error.h"></File>
+				<File RelativePath="..\..\include\SDL_events.h"></File>
+				<File RelativePath="..\..\include\SDL_filesystem.h"></File>
+				<File RelativePath="..\..\include\SDL_gamecontroller.h"></File>
+				<File RelativePath="..\..\include\SDL_gesture.h"></File>
+				<File RelativePath="..\..\include\SDL_guid.h"></File>
+				<File RelativePath="..\..\include\SDL_haptic.h"></File>
+				<File RelativePath="..\..\include\SDL_hints.h"></File>
+				<File RelativePath="..\..\include\SDL_hidapi.h"></File>
+				<File RelativePath="..\..\include\SDL_joystick.h"></File>
+				<File RelativePath="..\..\include\SDL_keyboard.h"></File>
+				<File RelativePath="..\..\include\SDL_keycode.h"></File>
+				<File RelativePath="..\..\include\SDL_loadso.h"></File>
+				<File RelativePath="..\..\include\SDL_locale.h"></File>
+				<File RelativePath="..\..\include\SDL_log.h"></File>
+				<File RelativePath="..\..\include\SDL_main.h"></File>
+				<File RelativePath="..\..\include\SDL_messagebox.h"></File>
+				<File RelativePath="..\..\include\SDL_metal.h"></File>
+				<File RelativePath="..\..\include\SDL_misc.h"></File>
+				<File RelativePath="..\..\include\SDL_mouse.h"></File>
+				<File RelativePath="..\..\include\SDL_mutex.h"></File>
+				<File RelativePath="..\..\include\SDL_name.h"></File>
+				<File RelativePath="..\..\include\SDL_opengl.h"></File>
+				<File RelativePath="..\..\include\SDL_opengl_glext.h"></File>
+				<File RelativePath="..\..\include\SDL_opengles.h"></File>
+				<File RelativePath="..\..\include\SDL_opengles2.h"></File>
+				<File RelativePath="..\..\include\SDL_opengles2_gl2.h"></File>
+				<File RelativePath="..\..\include\SDL_opengles2_gl2ext.h"></File>
+				<File RelativePath="..\..\include\SDL_opengles2_gl2platform.h"></File>
+				<File RelativePath="..\..\include\SDL_opengles2_khrplatform.h"></File>
+				<File RelativePath="..\..\include\SDL_pixels.h"></File>
+				<File RelativePath="..\..\include\SDL_platform.h"></File>
+				<File RelativePath="..\..\include\SDL_power.h"></File>
+				<File RelativePath="..\..\include\SDL_quit.h"></File>
+				<File RelativePath="..\..\include\SDL_rect.h"></File>
+				<File RelativePath="..\..\include\SDL_render.h"></File>
+				<File RelativePath="..\..\include\SDL_revision.h"></File>
+				<File RelativePath="..\..\include\SDL_rwops.h"></File>
+				<File RelativePath="..\..\include\SDL_scancode.h"></File>
+				<File RelativePath="..\..\include\SDL_sensor.h"></File>
+				<File RelativePath="..\..\include\SDL_shape.h"></File>
+				<File RelativePath="..\..\include\SDL_stdinc.h"></File>
+				<File RelativePath="..\..\include\SDL_surface.h"></File>
+				<File RelativePath="..\..\include\SDL_system.h"></File>
+				<File RelativePath="..\..\include\SDL_syswm.h"></File>
+				<File RelativePath="..\..\include\SDL_test.h"></File>
+				<File RelativePath="..\..\include\SDL_test_assert.h"></File>
+				<File RelativePath="..\..\include\SDL_test_common.h"></File>
+				<File RelativePath="..\..\include\SDL_test_compare.h"></File>
+				<File RelativePath="..\..\include\SDL_test_crc32.h"></File>
+				<File RelativePath="..\..\include\SDL_test_font.h"></File>
+				<File RelativePath="..\..\include\SDL_test_fuzzer.h"></File>
+				<File RelativePath="..\..\include\SDL_test_harness.h"></File>
+				<File RelativePath="..\..\include\SDL_test_images.h"></File>
+				<File RelativePath="..\..\include\SDL_test_log.h"></File>
+				<File RelativePath="..\..\include\SDL_test_md5.h"></File>
+				<File RelativePath="..\..\include\SDL_test_memory.h"></File>
+				<File RelativePath="..\..\include\SDL_test_random.h"></File>
+				<File RelativePath="..\..\include\SDL_thread.h"></File>
+				<File RelativePath="..\..\include\SDL_timer.h"></File>
+				<File RelativePath="..\..\include\SDL_touch.h"></File>
+				<File RelativePath="..\..\include\SDL_types.h"></File>
+				<File RelativePath="..\..\include\SDL_version.h"></File>
+				<File RelativePath="..\..\include\SDL_video.h"></File>
+				<File RelativePath="..\..\include\SDL_vulkan.h"></File>
+			</Filter>
+			<Filter Name="audio" Filter="">
+				<File RelativePath="..\..\src\audio\SDL_audio_c.h"></File>
+				<File RelativePath="..\..\src\audio\SDL_audiodev_c.h"></File>
+				<File RelativePath="..\..\src\audio\SDL_sysaudio.h"></File>
+				<File RelativePath="..\..\src\audio\SDL_wave.h"></File>
+				<Filter Name="directsound" Filter="">
+					<File RelativePath="..\..\src\audio\directsound\SDL_directsound.h"></File>
+				</Filter>
+				<Filter Name="disk" Filter="">
+					<File RelativePath="..\..\src\audio\disk\SDL_diskaudio.h"></File>
+				</Filter>
+				<Filter Name="dummy" Filter="">
+					<File RelativePath="..\..\src\audio\dummy\SDL_dummyaudio.h"></File>
+				</Filter>
+				<Filter Name="wasapi" Filter="">
+					<File RelativePath="..\..\src\audio\wasapi\SDL_wasapi.h"></File>
+				</Filter>
+				<Filter Name="winmm" Filter="">
+					<File RelativePath="..\..\src\audio\winmm\SDL_winmm.h"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="core" Filter="">
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\core\xboxog\SDL_directx.h"></File>
+					<File RelativePath="..\..\src\core\xboxog\SDL_hid.h"></File>
+					<File RelativePath="..\..\src\core\xboxog\SDL_immdevice.h"></File>
+					<File RelativePath="..\..\src\core\xboxog\SDL_windows.h"></File>
+					<File RelativePath="..\..\src\core\xboxog\SDL_xinput.h"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="dynapi" Filter="">
+				<File RelativePath="..\..\src\dynapi\SDL_dynapi.h"></File>
+				<File RelativePath="..\..\src\dynapi\SDL_dynapi_overrides.h"></File>
+				<File RelativePath="..\..\src\dynapi\SDL_dynapi_procs.h"></File>
+			</Filter>
+			<Filter Name="events" Filter="">
+				<File RelativePath="..\..\src\events\blank_cursor.h"></File>
+				<File RelativePath="..\..\src\events\default_cursor.h"></File>
+				<File RelativePath="..\..\src\events\scancodes_windows.h"></File>
+				<File RelativePath="..\..\src\events\SDL_clipboardevents_c.h"></File>
+				<File RelativePath="..\..\src\events\SDL_displayevents_c.h"></File>
+				<File RelativePath="..\..\src\events\SDL_dropevents_c.h"></File>
+				<File RelativePath="..\..\src\events\SDL_events_c.h"></File>
+				<File RelativePath="..\..\src\events\SDL_gesture_c.h"></File>
+				<File RelativePath="..\..\src\events\SDL_keyboard_c.h"></File>
+				<File RelativePath="..\..\src\events\SDL_mouse_c.h"></File>
+				<File RelativePath="..\..\src\events\SDL_touch_c.h"></File>
+				<File RelativePath="..\..\src\events\SDL_windowevents_c.h"></File>
+			</Filter>
+			<Filter Name="haptic" Filter="">
+				<File RelativePath="..\..\src\haptic\SDL_haptic_c.h"></File>
+				<File RelativePath="..\..\src\haptic\SDL_syshaptic.h"></File>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\haptic\xboxog\SDL_dinputhaptic_c.h"></File>
+					<File RelativePath="..\..\src\haptic\xboxog\SDL_windowshaptic_c.h"></File>
+					<File RelativePath="..\..\src\haptic\xboxog\SDL_xinputhaptic_c.h"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="hidapi" Filter="">
+				<File RelativePath="..\..\src\hidapi\SDL_hidapi_c.h"></File>
+				<Filter Name="hidapi" Filter="">
+					<File RelativePath="..\..\src\hidapi\hidapi\hidapi.h"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="joystick" Filter="">
+				<File RelativePath="..\..\src\joystick\controller_type.h"></File>
+				<File RelativePath="..\..\src\joystick\SDL_gamecontrollerdb.h"></File>
+				<File RelativePath="..\..\src\joystick\SDL_joystick_c.h"></File>
+				<File RelativePath="..\..\src\joystick\SDL_steam_virtual_gamepad.h"></File>
+				<File RelativePath="..\..\src\joystick\SDL_sysjoystick.h"></File>
+				<File RelativePath="..\..\src\joystick\usb_ids.h"></File>
+				<Filter Name="hidapi" Filter="">
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapijoystick_c.h"></File>
+					<File RelativePath="..\..\src\joystick\hidapi\SDL_hidapi_rumble.h"></File>
+				</Filter>
+				<Filter Name="virtual" Filter="">
+					<File RelativePath="..\..\src\joystick\virtual\SDL_virtualjoystick_c.h"></File>
+				</Filter>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\joystick\xboxog\SDL_dinputjoystick_c.h"></File>
+					<File RelativePath="..\..\src\joystick\xboxog\SDL_rawinputjoystick_c.h"></File>
+					<File RelativePath="..\..\src\joystick\xboxog\SDL_windowsjoystick_c.h"></File>
+					<File RelativePath="..\..\src\joystick\xboxog\SDL_xinputjoystick_c.h"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="libm" Filter="">
+				<File RelativePath="..\..\src\libm\math_libm.h"></File>
+				<File RelativePath="..\..\src\libm\math_private.h"></File>
+			</Filter>
+			<Filter Name="locale" Filter="">
+				<File RelativePath="..\..\src\locale\SDL_syslocale.h"></File>
+			</Filter>
+			<Filter Name="misc" Filter="">
+				<File RelativePath="..\..\src\misc\SDL_sysurl.h"></File>
+			</Filter>
+			<Filter Name="power" Filter="">
+				<File RelativePath="..\..\src\power\SDL_syspower.h"></File>
+			</Filter>
+			<Filter Name="render" Filter="">
+				<File RelativePath="..\..\src\render\SDL_d3dmath.h"></File>
+				<File RelativePath="..\..\src\render\SDL_sysrender.h"></File>
+				<File RelativePath="..\..\src\render\SDL_yuv_sw_c.h"></File>
+				<Filter Name="direct3d11" Filter="">
+					<File RelativePath="..\..\src\render\direct3d11\SDL_shaders_d3d11.h"></File>
+				</Filter>
+				<Filter Name="direct3d12" Filter="">
+					<File RelativePath="..\..\src\render\direct3d12\SDL_shaders_d3d12.h"></File>
+				</Filter>
+				<Filter Name="direct3d" Filter="">
+					<File RelativePath="..\..\src\render\direct3d\SDL_shaders_d3d.h"></File>
+				</Filter>
+				<Filter Name="opengles2" Filter="">
+					<File RelativePath="..\..\src\render\opengles2\SDL_gles2funcs.h"></File>
+					<File RelativePath="..\..\src\render\opengles2\SDL_shaders_gles2.h"></File>
+				</Filter>
+				<Filter Name="opengl" Filter="">
+					<File RelativePath="..\..\src\render\opengl\SDL_glfuncs.h"></File>
+					<File RelativePath="..\..\src\render\opengl\SDL_shaders_gl.h"></File>
+				</Filter>
+				<Filter Name="software" Filter="">
+					<File RelativePath="..\..\src\render\software\SDL_blendfillrect.h"></File>
+					<File RelativePath="..\..\src\render\software\SDL_blendline.h"></File>
+					<File RelativePath="..\..\src\render\software\SDL_blendpoint.h"></File>
+					<File RelativePath="..\..\src\render\software\SDL_draw.h"></File>
+					<File RelativePath="..\..\src\render\software\SDL_drawline.h"></File>
+					<File RelativePath="..\..\src\render\software\SDL_drawpoint.h"></File>
+					<File RelativePath="..\..\src\render\software\SDL_render_sw_c.h"></File>
+					<File RelativePath="..\..\src\render\software\SDL_rotate.h"></File>
+					<File RelativePath="..\..\src\render\software\SDL_triangle.h"></File>
+				</Filter>
+			</Filter>
+				<File RelativePath="..\..\src\SDL_assert_c.h"></File>
+				<File RelativePath="..\..\src\SDL_dataqueue.h"></File>
+				<File RelativePath="..\..\src\SDL_error_c.h"></File>
+				<File RelativePath="..\..\src\SDL_hints_c.h"></File>
+				<File RelativePath="..\..\src\SDL_internal.h"></File>
+				<File RelativePath="..\..\src\SDL_list.h"></File>
+				<File RelativePath="..\..\src\SDL_log_c.h"></File>
+			<Filter Name="sensor" Filter="">
+				<File RelativePath="..\..\src\sensor\SDL_sensor_c.h"></File>
+				<File RelativePath="..\..\src\sensor\SDL_syssensor.h"></File>
+				<Filter Name="dummy" Filter="">
+					<File RelativePath="..\..\src\sensor\dummy\SDL_dummysensor.h"></File>
+				</Filter>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\sensor\xboxog\SDL_windowssensor.h"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="thread" Filter="">
+				<File RelativePath="..\..\src\thread\SDL_systhread.h"></File>
+				<File RelativePath="..\..\src\thread\SDL_thread_c.h"></File>
+				<Filter Name="generic" Filter="">
+					<File RelativePath="..\..\src\thread\generic\SDL_syscond_c.h"></File>
+				</Filter>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\thread\xboxog\SDL_sysmutex_c.h"></File>
+					<File RelativePath="..\..\src\thread\xboxog\SDL_systhread_c.h"></File>
+				</Filter>
+			</Filter>
+			<Filter Name="timer" Filter="">
+				<File RelativePath="..\..\src\timer\SDL_timer_c.h"></File>
+			</Filter>
+			<Filter Name="video" Filter="">
+				<File RelativePath="..\..\src\video\SDL_blit.h"></File>
+				<File RelativePath="..\..\src\video\SDL_blit_auto.h"></File>
+				<File RelativePath="..\..\src\video\SDL_blit_copy.h"></File>
+				<File RelativePath="..\..\src\video\SDL_blit_slow.h"></File>
+				<File RelativePath="..\..\src\video\SDL_egl_c.h"></File>
+				<File RelativePath="..\..\src\video\SDL_pixels_c.h"></File>
+				<File RelativePath="..\..\src\video\SDL_rect_c.h"></File>
+				<File RelativePath="..\..\src\video\SDL_RLEaccel_c.h"></File>
+				<File RelativePath="..\..\src\video\SDL_shape_internals.h"></File>
+				<File RelativePath="..\..\src\video\SDL_sysvideo.h"></File>
+				<File RelativePath="..\..\src\video\SDL_vulkan_internal.h"></File>
+				<File RelativePath="..\..\src\video\SDL_yuv_c.h"></File>
+				<Filter Name="dummy" Filter="">
+					<File RelativePath="..\..\src\video\dummy\SDL_nullevents_c.h"></File>
+					<File RelativePath="..\..\src\video\dummy\SDL_nullframebuffer_c.h"></File>
+					<File RelativePath="..\..\src\video\dummy\SDL_nullvideo.h"></File>
+				</Filter>
+				<Filter Name="khronos" Filter="">
+					<Filter Name="vulkan" Filter="">
+						<File RelativePath="..\..\src\video\khronos\vulkan\vk_icd.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vk_layer.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vk_platform.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vk_sdk_platform.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_android.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_beta.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_core.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_directfb.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_fuchsia.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_ggp.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_ios.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_macos.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_metal.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_vi.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_wayland.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_win32.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_xcb.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_xlib.h"></File>
+						<File RelativePath="..\..\src\video\khronos\vulkan\vulkan_xlib_xrandr.h"></File>
+					</Filter>
+				</Filter>
+				<Filter Name="xboxog" Filter="">
+					<File RelativePath="..\..\src\video\xboxog\SDL_msctf.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_vkeys.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsclipboard.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsevents.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsframebuffer.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowskeyboard.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsmessagebox.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsmodes.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsmouse.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsopengl.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsopengles.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsshape.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsvideo.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowsvulkan.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\SDL_windowswindow.h"></File>
+					<File RelativePath="..\..\src\video\xboxog\wmmsg.h"></File>
+				</Filter>
+				<Filter Name="yuv2rgb" Filter="">
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb.h"></File>
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_common.h"></File>
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_internal.h"></File>
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_lsx.h"></File>
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_lsx_func.h"></File>
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_sse.h"></File>
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_sse_func.h"></File>
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_std.h"></File>
+					<File RelativePath="..\..\src\video\yuv2rgb\yuv_rgb_std_func.h"></File>
+				</Filter>
+			</Filter>
+
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
