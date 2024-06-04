@@ -20,6 +20,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
 				PreprocessorDefinitions="_DEBUG;_XBOX"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
@@ -117,6 +118,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;PROFILE;FASTCAP"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -168,6 +170,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -217,6 +220,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;LTCG"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -262,39 +266,89 @@
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
-				<File RelativePath="..\..\visualtest\src\action_configparser.c"></File>
-				<File RelativePath="..\..\visualtest\src\harness_argparser.c"></File>
-				<File RelativePath="..\..\visualtest\src\mischelper.c"></File>
-				<File RelativePath="..\..\visualtest\src\parsehelper.c"></File>
-				<File RelativePath="..\..\visualtest\src\rwhelper.c"></File>
-				<File RelativePath="..\..\visualtest\src\screenshot.c"></File>
-				<File RelativePath="..\..\visualtest\src\sut_configparser.c"></File>
-				<File RelativePath="..\..\visualtest\src\testharness.c"></File>
-				<File RelativePath="..\..\visualtest\src\variators.c"></File>
-				<File RelativePath="..\..\visualtest\src\variator_exhaustive.c"></File>
-				<File RelativePath="..\..\visualtest\src\variator_common.c"></File>
-				<File RelativePath="..\..\visualtest\src\variator_random.c"></File>
-				<File RelativePath="..\..\visualtest\src\xboxog\windows_process.c"></File>
-				<File RelativePath="..\..\visualtest\src\xboxog\windows_screenshot.c"></File>
-
+			<File
+				RelativePath="..\..\visualtest\src\action_configparser.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\harness_argparser.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\mischelper.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\parsehelper.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\rwhelper.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\screenshot.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\sut_configparser.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\testharness.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\variator_common.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\variator_exhaustive.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\variator_random.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\variators.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\xboxog\windows_process.c">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\src\xboxog\windows_screenshot.c">
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_action_configparser.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_exhaustive_variator.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_harness_argparser.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_mischelper.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_parsehelper.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_process.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_random_variator.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_rwhelper.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_screenshot.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_sut_configparser.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_variators.h"></File>
-				<File RelativePath="..\..\visualtest\include\SDL_visualtest_variator_common.h"></File>
-
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_action_configparser.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_exhaustive_variator.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_harness_argparser.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_mischelper.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_parsehelper.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_process.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_random_variator.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_rwhelper.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_screenshot.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_sut_configparser.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_variator_common.h">
+			</File>
+			<File
+				RelativePath="..\..\visualtest\include\SDL_visualtest_variators.h">
+			</File>
 		</Filter>
 	</Files>
 	<Globals>
