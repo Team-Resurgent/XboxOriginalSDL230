@@ -22,7 +22,7 @@
 
 #if defined(__WIN32__) || defined(__GDK__)
 #include "core/windows/SDL_windows.h"
-#elif defined(__OS2__)
+#elif defined(__OS2__) || defined(__XBOXOG__)
 #include <stdlib.h> /* _exit() */
 #elif !defined(__WINRT__)
 #include <unistd.h> /* _exit(), etc. */

@@ -23,7 +23,7 @@
 #ifndef SDL_hid_h_
 #define SDL_hid_h_
 
-#include "SDL_windows.h"
+#include "SDL_xboxog.h"
 
 #ifndef __WINRT__
 

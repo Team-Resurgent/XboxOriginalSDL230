@@ -22,8 +22,8 @@
 
 #include "SDL_events.h"
 #include "../SDL_sysjoystick.h"
-#include "../../core/windows/SDL_windows.h"
-#include "../../core/windows/SDL_directx.h"
+#include "../../core/xboxog/SDL_xboxog.h"
+#include "../../core/xboxog/SDL_directx.h"
 
 #define MAX_INPUTS 256 /* each joystick can have up to 256 inputs */
 

@@ -22,7 +22,7 @@
 
 #ifdef SDL_TIMER_WINDOWS
 
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 #include <mmsystem.h>
 
 #include "SDL_timer.h"

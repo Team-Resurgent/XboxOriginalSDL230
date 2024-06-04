@@ -40,7 +40,7 @@
 #include "SDL_joystick.h"
 #include "../SDL_sysjoystick.h"
 #include "../../thread/SDL_systhread.h"
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 #if !defined(__WINRT__) && !defined(__XBOXONE__) && !defined(__XBOXSERIES__)
 #include <dbt.h>
 #endif

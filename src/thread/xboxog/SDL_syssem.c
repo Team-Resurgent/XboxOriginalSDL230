@@ -33,7 +33,7 @@
  * which are chosen at runtime.
  */
 
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 
 #include "SDL_hints.h"
 #include "SDL_thread.h"

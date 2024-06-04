@@ -89,8 +89,7 @@
 #define MINGW32_FORCEALIGN
 #endif
 
-#include <windows.h>
-#include <basetyps.h> /* for REFIID with broken mingw.org headers */
+#include <xtl.h>
 
 #include "SDL_rect.h"
 

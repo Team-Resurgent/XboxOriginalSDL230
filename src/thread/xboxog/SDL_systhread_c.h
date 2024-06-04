@@ -23,7 +23,7 @@
 #ifndef SDL_systhread_c_h_
 #define SDL_systhread_c_h_
 
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 
 typedef HANDLE SYS_ThreadHandle;
 

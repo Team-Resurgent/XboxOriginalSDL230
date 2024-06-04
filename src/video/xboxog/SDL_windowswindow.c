@@ -22,7 +22,7 @@
 
 #ifdef SDL_VIDEO_DRIVER_WINDOWS
 
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 
 #include "SDL_log.h"
 #include "../SDL_sysvideo.h"

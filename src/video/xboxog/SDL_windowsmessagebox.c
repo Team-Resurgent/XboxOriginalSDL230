@@ -29,7 +29,7 @@
 #define SIZE_MAX ((size_t)-1)
 #endif
 
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 
 #include "SDL_windowsvideo.h"
 

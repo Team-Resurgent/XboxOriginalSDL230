@@ -29,7 +29,7 @@
 #include "SDL_sensor.h"
 #include "SDL_windowssensor.h"
 #include "../SDL_syssensor.h"
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 
 #define COBJMACROS
 #include <initguid.h>

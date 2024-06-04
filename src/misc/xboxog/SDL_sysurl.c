@@ -20,41 +20,12 @@
 */
 
 #include "../SDL_sysurl.h"
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 
-#include <shellapi.h>
-
-#if defined(__XBOXONE__) || defined(__XBOXSERIES__)
 int SDL_SYS_OpenURL(const char *url)
 {
     /* Not supported */
     return SDL_Unsupported();
 }
-#else
-/* https://msdn.microsoft.com/en-us/library/windows/desktop/bb762153%28v=vs.85%29.aspx */
-int SDL_SYS_OpenURL(const char *url)
-{
-    WCHAR *wurl;
-    HINSTANCE rc;
-
-    /* MSDN says for safety's sake, make sure COM is initialized. */
-    const HRESULT hr = WIN_CoInitialize();
-    if (FAILED(hr)) {
-        return WIN_SetErrorFromHRESULT("CoInitialize failed", hr);
-    }
-
-    wurl = WIN_UTF8ToStringW(url);
-    if (!wurl) {
-        WIN_CoUninitialize();
-        return SDL_OutOfMemory();
-    }
-
-    /* Success returns value greater than 32. Less is an error. */
-    rc = ShellExecuteW(NULL, L"open", wurl, NULL, NULL, SW_SHOWNORMAL);
-    SDL_free(wurl);
-    WIN_CoUninitialize();
-    return (rc > ((HINSTANCE)32)) ? 0 : WIN_SetError("Couldn't open given URL.");
-}
-#endif
 
 /* vi: set ts=4 sw=4 expandtab: */

@@ -23,7 +23,7 @@
 #ifndef SDL_POWER_DISABLED
 #ifdef SDL_POWER_WINDOWS
 
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 
 #include "SDL_power.h"
 

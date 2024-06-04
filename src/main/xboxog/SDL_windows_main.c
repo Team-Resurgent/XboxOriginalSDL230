@@ -8,7 +8,7 @@
 #ifdef __WIN32__
 
 /* Include this so we define UNICODE properly */
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 #include <shellapi.h> /* CommandLineToArgvW() */
 
 /* Include the SDL main definition header */

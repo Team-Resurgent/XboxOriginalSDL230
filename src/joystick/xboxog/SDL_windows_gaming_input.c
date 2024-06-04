@@ -30,7 +30,7 @@
 #include "../hidapi/SDL_hidapijoystick_c.h"
 #include "SDL_rawinputjoystick_c.h"
 
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 #define COBJMACROS
 #include "windows.gaming.input.h"
 #include <cfgmgr32.h>

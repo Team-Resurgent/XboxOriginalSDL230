@@ -23,7 +23,7 @@
 #ifndef SDL_xinput_h_
 #define SDL_xinput_h_
 
-#include "SDL_windows.h"
+#include "SDL_xboxog.h"
 
 #ifdef HAVE_XINPUT_H
 #if defined(__XBOXONE__) || defined(__XBOXSERIES__)
@@ -32,7 +32,7 @@
 #include <XInputOnGameInput.h>
 using namespace XInputOnGameInput;
 #else
-#include <xinput.h>
+//#include <xinput.h>
 #endif
 #endif /* HAVE_XINPUT_H */
 

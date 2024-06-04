@@ -22,7 +22,7 @@
 
 #if (defined(__WIN32__) || defined(__GDK__)) && defined(HAVE_MMDEVICEAPI_H)
 
-#include "SDL_windows.h"
+#include "SDL_xboxog.h"
 #include "SDL_immdevice.h"
 #include "SDL_timer.h"
 #include "../../audio/SDL_sysaudio.h"

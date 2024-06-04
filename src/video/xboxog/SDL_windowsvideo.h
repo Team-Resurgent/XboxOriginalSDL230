@@ -23,7 +23,7 @@
 #ifndef SDL_windowsvideo_h_
 #define SDL_windowsvideo_h_
 
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 
 #include "../SDL_sysvideo.h"
 

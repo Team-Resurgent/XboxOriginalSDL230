@@ -23,7 +23,7 @@
 
 #ifdef SDL_THREAD_WINDOWS
 
-#include "../../core/windows/SDL_windows.h"
+#include "../../core/xboxog/SDL_xboxog.h"
 
 #include "SDL_thread.h"
 #include "../SDL_thread_c.h"
