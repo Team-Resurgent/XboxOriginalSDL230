@@ -84,7 +84,8 @@ typedef unsigned long long uint64_t;
 //#define HAVE_DSOUND_H 1;
 
 /* Enable the Xbox joystick driver (src/joystick/xbox/\*.c) */
-#define SDL_JOYSTICK_XBOXOG   1
+//#define SDL_JOYSTICK_XBOXOG   1
+#define SDL_JOYSTICK_DUMMY 1
 
 /* Enable the stub haptic driver (src/haptic/dummy/\*.c) */
 #define SDL_HAPTIC_DISABLED 1
