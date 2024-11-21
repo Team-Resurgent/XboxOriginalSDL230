@@ -193,7 +193,10 @@
 #endif
 #endif /* defined(WIN32) || defined(_WIN32) || defined(__CYGWIN__) */
 
-#if defined(__WINDOWS__)
+#if defined(XBOX) || defined(_XBOX)
+#undef __XBOX__
+#define __XBOX__ 1
+#elif defined(__WINDOWS__)
 #undef __WIN32__
 #define __WIN32__ 1
 #endif
