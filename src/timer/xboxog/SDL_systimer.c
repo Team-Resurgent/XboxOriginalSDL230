@@ -22,7 +22,7 @@
 
 #ifdef SDL_TIMER_XBOX
 
-#include "../../core/xbox/SDL_xbox.h"
+#include "../../core/xboxog/SDL_xbox.h"
 #ifndef _XBOX
 #include <mmsystem.h>
 #endif

@@ -24,7 +24,7 @@
 
 /* Semaphore functions using the Win32 API */
 
-#include "../../core/xbox/SDL_xbox.h"
+#include "../../core/xboxog/SDL_xbox.h"
 
 #include "SDL_thread.h"
 

@@ -21,7 +21,7 @@
 				Optimization="0"
 				OptimizeForProcessor="2"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
-				PreprocessorDefinitions="_DEBUG;_XBOX;_LIB"
+				PreprocessorDefinitions="_DEBUG;_XBOX;__XBOX__;_LIB"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"

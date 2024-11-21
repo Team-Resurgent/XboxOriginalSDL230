@@ -27,7 +27,7 @@
 
 #if SDL_VIDEO_RENDER_D3D && !SDL_RENDER_DISABLED
 
-#include "../../core/xbox/SDL_xbox.h"
+#include "../../core/xboxog/SDL_xbox.h"
 
 #include "SDL_hints.h"
 #ifndef _XBOX
@@ -38,7 +38,7 @@
 #include "SDL_assert.h"
 #include "../SDL_sysrender.h"
 #include "../SDL_d3dmath.h"
-#include "../../video/xbox/SDL_xboxvideo.h"
+#include "../../video/xboxog/SDL_xboxvideo.h"
 
 #if SDL_VIDEO_RENDER_D3D
 #define D3D_DEBUG_INFO

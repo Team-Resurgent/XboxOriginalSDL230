@@ -23,7 +23,7 @@
 #ifndef SDL_xboxvideo_h_
 #define SDL_xboxvideo_h_
 
-#include "../../core/xbox/SDL_xbox.h"
+#include "../../core/xboxog/SDL_xbox.h"
 #include "../SDL_sysvideo.h"
 
 #include "SDL_xboxevents.h"
