@@ -20,6 +20,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../../include&quot;"
 				PreprocessorDefinitions="_DEBUG;_XBOX"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
@@ -66,7 +67,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../../include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;PROFILE"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -117,6 +118,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../../include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;PROFILE;FASTCAP"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -168,6 +170,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../../include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -217,6 +220,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../../include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;LTCG"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -262,15 +266,17 @@
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
-				<File RelativePath="..\..\..\test\testgamecontroller.c"></File>
-				<File RelativePath="..\..\..\test\testutils.c"></File>
-
+			<File
+				RelativePath="..\..\..\test\testgamecontroller.c">
+			</File>
+			<File
+				RelativePath="..\..\..\test\testutils.c">
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
-
 		</Filter>
 	</Files>
 	<Globals>

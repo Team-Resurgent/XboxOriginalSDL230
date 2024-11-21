@@ -20,6 +20,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
 				PreprocessorDefinitions="_DEBUG;_XBOX"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
@@ -117,6 +118,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;PROFILE;FASTCAP"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -168,6 +170,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -217,6 +220,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;LTCG"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -262,31 +266,63 @@
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
-			<Filter Name="test" Filter="">
-				<File RelativePath="..\..\src\test\SDL_test_assert.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_common.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_compare.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_crc32.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_font.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_fuzzer.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_harness.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_imageBlit.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_imageBlitBlend.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_imageFace.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_imagePrimitives.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_imagePrimitivesBlend.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_log.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_md5.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_memory.c"></File>
-				<File RelativePath="..\..\src\test\SDL_test_random.c"></File>
+			<Filter
+				Name="test"
+				Filter="">
+				<File
+					RelativePath="..\..\src\test\SDL_test_assert.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_common.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_compare.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_crc32.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_font.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_fuzzer.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_harness.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_imageBlit.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_imageBlitBlend.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_imageFace.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_imagePrimitives.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_imagePrimitivesBlend.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_log.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_md5.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_memory.c">
+				</File>
+				<File
+					RelativePath="..\..\src\test\SDL_test_random.c">
+				</File>
 			</Filter>
-
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
-
 		</Filter>
 	</Files>
 	<Globals>
