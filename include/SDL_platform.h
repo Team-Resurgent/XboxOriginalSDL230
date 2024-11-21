@@ -179,8 +179,8 @@
 #undef __WINGDK__
 #define __WINGDK__ 1
 #elif defined(_XBOX)
-#undef __XBOXOG__
-#define __XBOXOG__ 1
+#undef __XBOX__
+#define __XBOX__ 1
 #elif defined(_GAMING_XBOX_XBOXONE)
 #undef __XBOXONE__
 #define __XBOXONE__ 1

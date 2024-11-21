@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2019 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -20,20 +20,35 @@
 */
 #include "../../SDL_internal.h"
 
-#ifndef SDL_windowsevents_h_
-#define SDL_windowsevents_h_
+#ifndef SDL_xboxvideo_h_
+#define SDL_xboxvideo_h_
 
-extern LPTSTR SDL_Appname;
-extern Uint32 SDL_Appstyle;
-extern HINSTANCE SDL_Instance;
+#include "../../core/xbox/SDL_xbox.h"
+#include "../SDL_sysvideo.h"
 
-extern LRESULT CALLBACK WIN_KeyboardHookProc(int nCode, WPARAM wParam, LPARAM lParam);
-extern LRESULT CALLBACK WIN_WindowProc(HWND hwnd, UINT msg, WPARAM wParam,
-                                       LPARAM lParam);
-extern void WIN_PumpEvents(_THIS);
-extern void WIN_SendWakeupEvent(_THIS, SDL_Window *window);
-extern int WIN_WaitEventTimeout(_THIS, int timeout);
+#include "SDL_xboxevents.h"
+#include "SDL_xboxkeyboard.h"
+#include "SDL_xboxmouse.h"
+#include "SDL_xboxwindow.h"
+#include "SDL_events.h"
+#ifndef _XBOX
+#include "SDL_loadso.h"
+#endif
 
-#endif /* SDL_windowsevents_h_ */
+typedef struct SDL_VideoData
+{
+    int render; // Redundant
+} SDL_VideoData;
+
+typedef struct IDirect3D8 IDirect3D8;
+extern SDL_bool D3D_LoadDLL(/*void **pD3DDLL,*/ IDirect3D8 **pDirect3D8Interface );
+
+// TODO: Not used atm
+SDL_bool XBOX_HasScreenKeyboardSupport(_THIS);
+void XBOX_ShowScreenKeyboard(_THIS, SDL_Window *window);
+void XBOX_HideScreenKeyboard(_THIS, SDL_Window *window);
+SDL_bool XBOX_IsScreenKeyboardShown(_THIS, SDL_Window *window);
+
+#endif /* SDL_xboxvideo_h_ */
 
 /* vi: set ts=4 sw=4 expandtab: */

@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2019 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -20,17 +20,19 @@
 */
 #include "../../SDL_internal.h"
 
-#ifndef SDL_windowsclipboard_h_
-#define SDL_windowsclipboard_h_
+#if SDL_VIDEO_DRIVER_XBOX
 
-/* Forward declaration */
-struct SDL_VideoData;
+#include "SDL_xboxvideo.h"
+#include "..\..\events\SDL_mouse_c.h"
 
-extern int WIN_SetClipboardText(_THIS, const char *text);
-extern char *WIN_GetClipboardText(_THIS);
-extern SDL_bool WIN_HasClipboardText(_THIS);
-extern void WIN_CheckClipboardUpdate(struct SDL_VideoData *data);
+void
+XBOX_PumpEvents(_THIS)
+{
+	// Xbox keyboard and mouse
+	XBOX_UpdateKeyboard();
+	SDL_GetMouse()->UpdateMouseState();
+}
 
-#endif /* SDL_windowsclipboard_h_ */
+#endif /* SDL_VIDEO_DRIVER_XBOX */
 
 /* vi: set ts=4 sw=4 expandtab: */

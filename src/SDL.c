@@ -20,9 +20,11 @@
 */
 #include "./SDL_internal.h"
 
-#if defined(__WIN32__) || defined(__GDK__)
+#if defined(__XBOX__)
+#include "core/xboxog/SDL_xbox.h"
+#elif defined(__WIN32__) || defined(__GDK__)
 #include "core/windows/SDL_windows.h"
-#elif defined(__OS2__) || defined(__XBOXOG__)
+#elif defined(__OS2__)
 #include <stdlib.h> /* _exit() */
 #elif !defined(__WINRT__)
 #include <unistd.h> /* _exit(), etc. */
@@ -632,6 +634,8 @@ const char *SDL_GetPlatform(void)
     return "Nokia N-Gage";
 #elif defined(__3DS__)
     return "Nintendo 3DS";
+#elif defined(__XBOX__)
+	return "Xbox";
 #else
     return "Unknown (see SDL_platform.h)";
 #endif

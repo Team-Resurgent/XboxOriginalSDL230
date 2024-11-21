@@ -29,6 +29,11 @@
 #include "SDL_error.h"
 #include "SDL_log.h"
 #include "SDL_hints.h"
+
+#ifdef _XBOX
+#include <xtl.h>
+#endif
+
 #include "SDL_mutex.h"
 #include "SDL_log_c.h"
 

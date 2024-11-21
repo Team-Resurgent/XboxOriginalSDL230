@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2019 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -23,7 +23,7 @@
 #ifndef SDL_systhread_c_h_
 #define SDL_systhread_c_h_
 
-#include "../../core/xboxog/SDL_xboxog.h"
+#include "../../core/xbox/SDL_xbox.h"
 
 typedef HANDLE SYS_ThreadHandle;
 

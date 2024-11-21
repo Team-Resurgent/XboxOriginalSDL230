@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2019 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -20,27 +20,33 @@
 */
 #include "../../SDL_internal.h"
 
-#ifdef SDL_TIMER_WINDOWS
+#ifdef SDL_TIMER_XBOX
 
-#include "../../core/xboxog/SDL_xboxog.h"
+#include "../../core/xbox/SDL_xbox.h"
+#ifndef _XBOX
 #include <mmsystem.h>
+#endif
+
+#include <xtl.h>
 
 #include "SDL_timer.h"
 #include "SDL_hints.h"
 
-
 /* The first (low-resolution) ticks value of the application */
 static DWORD start = 0;
-static BOOL ticks_started = FALSE;
+static BOOL ticks_started = FALSE; 
 
+/* Store if a high-resolution performance counter exists on the system */
+static BOOL hires_timer_available;
 /* The first high-resolution ticks value of the application */
-static LARGE_INTEGER start_ticks;
+static LARGE_INTEGER hires_start_ticks;
 /* The number of ticks per second of the high-resolution performance counter */
-static LARGE_INTEGER ticks_per_second;
+static LARGE_INTEGER hires_ticks_per_second;
 
-static void SDL_SetSystemTimerResolution(const UINT uPeriod)
+static void
+SDL_SetSystemTimerResolution(const UINT uPeriod)
 {
-#if !defined(__WINRT__) && !defined(__XBOXONE__) && !defined(__XBOXSERIES__)
+#ifndef _XBOX
     static UINT timer_period = 0;
 
     if (uPeriod != timer_period) {
@@ -57,7 +63,8 @@ static void SDL_SetSystemTimerResolution(const UINT uPeriod)
 #endif
 }
 
-static void SDLCALL SDL_TimerResolutionChanged(void *userdata, const char *name, const char *oldValue, const char *hint)
+static void SDLCALL
+SDL_TimerResolutionChanged(void *userdata, const char *name, const char *oldValue, const char *hint)
 {
     UINT uPeriod;
 
@@ -72,10 +79,9 @@ static void SDLCALL SDL_TimerResolutionChanged(void *userdata, const char *name,
     }
 }
 
-void SDL_TicksInit(void)
+void
+SDL_TicksInit(void)
 {
-    BOOL rc;
-
     if (ticks_started) {
         return;
     }
@@ -87,56 +93,83 @@ void SDL_TicksInit(void)
                         SDL_TimerResolutionChanged, NULL);
 
     /* Set first ticks value */
-    /* QueryPerformanceCounter allegedly is always available and reliable as of WinXP,
-       so we'll rely on it here.
+    /* QueryPerformanceCounter has had problems in the past, but lots of games
+       use it, so we'll rely on it here.
      */
-    rc = QueryPerformanceFrequency(&ticks_per_second);
-    SDL_assert(rc != 0); /* this should _never_ fail if you're on XP or later. */
-    QueryPerformanceCounter(&start_ticks);
+    if (QueryPerformanceFrequency(&hires_ticks_per_second) == TRUE) {
+        hires_timer_available = TRUE;
+        QueryPerformanceCounter(&hires_start_ticks);
+    } else {
+        hires_timer_available = FALSE;
+#ifndef __WINRT__
+        start = timeGetTime();
+#endif /* __WINRT__ */
+    }
 }
 
-void SDL_TicksQuit(void)
+void
+SDL_TicksQuit(void)
 {
     SDL_DelHintCallback(SDL_HINT_TIMER_RESOLUTION,
                         SDL_TimerResolutionChanged, NULL);
 
-    SDL_SetSystemTimerResolution(0); /* always release our timer resolution request. */
+    SDL_SetSystemTimerResolution(0);  /* always release our timer resolution request. */
 
     start = 0;
     ticks_started = SDL_FALSE;
 }
 
-Uint64 SDL_GetTicks64(void)
+Uint32
+SDL_GetTicks(void)
 {
-    LARGE_INTEGER now;
-    BOOL rc;
+    DWORD now = 0;
+    LARGE_INTEGER hires_now;
 
     if (!ticks_started) {
         SDL_TicksInit();
     }
 
-    rc = QueryPerformanceCounter(&now);
-    SDL_assert(rc != 0); /* this should _never_ fail if you're on XP or later. */
-    return (Uint64)(((now.QuadPart - start_ticks.QuadPart) * 1000) / ticks_per_second.QuadPart);
+    if (hires_timer_available) {
+        QueryPerformanceCounter(&hires_now);
+
+        hires_now.QuadPart -= hires_start_ticks.QuadPart;
+        hires_now.QuadPart *= 1000;
+        hires_now.QuadPart /= hires_ticks_per_second.QuadPart;
+
+        return (DWORD) hires_now.QuadPart;
+    } else {
+#ifndef __WINRT__
+        now = timeGetTime();
+#endif /* __WINRT__ */
+    }
+
+    return (now - start);
 }
 
-Uint64 SDL_GetPerformanceCounter(void)
+Uint64
+SDL_GetPerformanceCounter(void)
 {
     LARGE_INTEGER counter;
-    const BOOL rc = QueryPerformanceCounter(&counter);
-    SDL_assert(rc != 0); /* this should _never_ fail if you're on XP or later. */
-    return (Uint64)counter.QuadPart;
+
+    if (!QueryPerformanceCounter(&counter)) {
+        return SDL_GetTicks();
+    }
+    return counter.QuadPart;
 }
 
-Uint64 SDL_GetPerformanceFrequency(void)
+Uint64
+SDL_GetPerformanceFrequency(void)
 {
     LARGE_INTEGER frequency;
-    const BOOL rc = QueryPerformanceFrequency(&frequency);
-    SDL_assert(rc != 0); /* this should _never_ fail if you're on XP or later. */
-    return (Uint64)frequency.QuadPart;
+
+    if (!QueryPerformanceFrequency(&frequency)) {
+        return 1000;
+    }
+    return frequency.QuadPart;
 }
 
-void SDL_Delay(Uint32 ms)
+void
+SDL_Delay(Uint32 ms)
 {
     /* Sleep() is not publicly available to apps in early versions of WinRT.
      *
@@ -165,6 +198,6 @@ void SDL_Delay(Uint32 ms)
 #endif
 }
 
-#endif /* SDL_TIMER_WINDOWS */
+#endif /* SDL_TIMER_XBOX */
 
 /* vi: set ts=4 sw=4 expandtab: */

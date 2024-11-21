@@ -30,7 +30,9 @@
 
 #include "../SDL_internal.h"
 
-#if defined(__WIN32__) || defined(__GDK__)
+#if defined(__XBOX__)
+#include "../core/xboxog/SDL_xbox.h"
+#elif defined(__WIN32__) || defined(__GDK__)
 #include "../core/windows/SDL_windows.h"
 #endif
 
@@ -78,7 +80,7 @@
 
 static int SDLCALL windows_file_open(SDL_RWops *context, const char *filename, const char *mode)
 {
-#if !defined(__XBOXONE__) && !defined(__XBOXSERIES__)
+#if !defined(__XBOXONE__) && !defined(__XBOXSERIES__) && !defined(_XBOX)
     UINT old_error_mode;
 #endif
     HANDLE h;
@@ -118,22 +120,29 @@ static int SDLCALL windows_file_open(SDL_RWops *context, const char *filename, c
     if (!context->hidden.windowsio.buffer.data) {
         return SDL_OutOfMemory();
     }
-#if !defined(__XBOXONE__) && !defined(__XBOXSERIES__)
+#if !defined(__XBOXONE__) && !defined(__XBOXSERIES__) && !defined(_XBOX)
     /* Do not open a dialog box if failure */
     old_error_mode =
         SetErrorMode(SEM_NOOPENFILEERRORBOX | SEM_FAILCRITICALERRORS);
 #endif
 
     {
-        LPTSTR tstr = WIN_UTF8ToString(filename);
+#ifndef _XBOX      
+		LPTSTR tstr = XBOX_UTF8ToString(filename);
         h = CreateFile(tstr, (w_right | r_right),
                        (w_right) ? 0 : FILE_SHARE_READ, NULL,
                        (must_exist | truncate | a_mode),
                        FILE_ATTRIBUTE_NORMAL, NULL);
         SDL_free(tstr);
+#else
+        h = CreateFile(filename, (w_right | r_right),
+                       (w_right) ? 0 : FILE_SHARE_READ, NULL,
+                       (must_exist | truncate | a_mode),
+                       FILE_ATTRIBUTE_NORMAL, NULL);
+#endif
     }
 
-#if !defined(__XBOXONE__) && !defined(__XBOXSERIES__)
+#if !defined(__XBOXONE__) && !defined(__XBOXSERIES__) && !defined(_XBOX)
     /* restore old behavior */
     SetErrorMode(old_error_mode);
 #endif
@@ -159,7 +168,11 @@ static Sint64 SDLCALL windows_file_size(SDL_RWops *context)
     }
 
     if (!GetFileSizeEx(context->hidden.windowsio.h, &size)) {
+#ifndef __XBOX
         return WIN_SetError("windows_file_size");
+#else
+        return XBOX_SetError("windows_file_size");
+#endif
     }
 
     return size.QuadPart;
@@ -196,7 +209,11 @@ static Sint64 SDLCALL windows_file_seek(SDL_RWops *context, Sint64 offset, int w
 
     windowsoffset.QuadPart = offset;
     if (!SetFilePointerEx(context->hidden.windowsio.h, windowsoffset, &windowsoffset, windowswhence)) {
+#ifndef __XBOX
         return WIN_SetError("windows_file_seek");
+#else
+        return XBOX_SetError("windows_file_size");
+#endif
     }
     return windowsoffset.QuadPart;
 }

@@ -43,10 +43,10 @@
 #include "TargetConditionals.h"
 #endif
 
-#if defined(TARGET_OS_IPHONE) && TARGET_OS_IPHONE /* probably not useful on iOS. */
+#if defined(__XBOX__)
 #define SDL_DYNAMIC_API 0
-#elif defined(__XBOXOG__)
-#define SDL_DYNAMIC_API 0 /* devkitARM doesn't support dynamic linking */
+#elif defined(TARGET_OS_IPHONE) && TARGET_OS_IPHONE /* probably not useful on iOS. */
+#define SDL_DYNAMIC_API 0
 #elif defined(__ANDROID__) /* probably not useful on Android. */
 #define SDL_DYNAMIC_API 0
 #elif defined(__native_client__) && __native_client__  /* probably not useful on NACL. */

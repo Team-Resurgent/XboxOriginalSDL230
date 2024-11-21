@@ -23,7 +23,11 @@
 #ifndef SDL_directsound_h_
 #define SDL_directsound_h_
 
+#ifndef _XBOX
 #include "../../core/windows/SDL_directx.h"
+#else
+#include "../../core/xboxog/SDL_directx.h"
+#endif
 
 #include "../SDL_sysaudio.h"
 
@@ -35,8 +39,10 @@ struct SDL_PrivateAudioData
 {
     LPDIRECTSOUND sound;
     LPDIRECTSOUNDBUFFER mixbuf;
+#ifndef _XBOX // No capture on Xbox
     LPDIRECTSOUNDCAPTURE capture;
     LPDIRECTSOUNDCAPTUREBUFFER capturebuf;
+#endif
     int num_buffers;
     DWORD lastchunk;
     Uint8 *locked_buf;

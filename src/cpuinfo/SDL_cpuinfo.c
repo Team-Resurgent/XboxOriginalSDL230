@@ -24,9 +24,12 @@
 #include "../SDL_internal.h"
 #endif
 
-#if defined(__WIN32__) || defined(__WINRT__) || defined(__GDK__)
+#if defined(__XBOX__)
+#include "../core/xboxog/SDL_xbox.h"
+#elif defined(__WIN32__) || defined(__WINRT__) || defined(__GDK__)
 #include "../core/windows/SDL_windows.h"
 #endif
+
 #if defined(__OS2__)
 #undef HAVE_SYSCTLBYNAME
 #define INCL_DOS

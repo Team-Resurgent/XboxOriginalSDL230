@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2019 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -20,23 +20,36 @@
 */
 #include "../../SDL_internal.h"
 
-#ifndef SDL_windowskeyboard_h_
-#define SDL_windowskeyboard_h_
+#if defined(__WIN32__) || defined(__WINRT__) ||  defined(__XBOX__)
 
-extern void WIN_InitKeyboard(_THIS);
-extern void WIN_UpdateKeymap(SDL_bool send_event);
-extern void WIN_QuitKeyboard(_THIS);
+#include "SDL_xbox.h"
+#include "SDL_error.h"
+#include "SDL_assert.h"
 
-extern void WIN_ResetDeadKeys(void);
+/* Sets an error message based on an HRESULT */
+int
+XBOX_SetErrorFromHRESULT(const char *prefix, HRESULT hr)
+{
+// TODO
+/*  TCHAR buffer[1024];
+    char *message;
+    FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, hr, 0,
+                  buffer, SDL_arraysize(buffer), NULL);
+    message = XBOX_StringToUTF8(buffer);
+    SDL_SetError("%s%s%s", prefix ? prefix : "", prefix ? ": " : "", message);
+    SDL_free(message);
+*/
+	SDL_SetError("ERROR: XBOX_SetErrorFromHRESULT");
+    return -1;
+}
 
-extern void WIN_StartTextInput(_THIS);
-extern void WIN_StopTextInput(_THIS);
-extern void WIN_SetTextInputRect(_THIS, const SDL_Rect *rect);
-extern void WIN_ClearComposition(_THIS);
-extern SDL_bool WIN_IsTextInputShown(_THIS);
+/* Sets an error message based on GetLastError() */
+int
+XBOX_SetError(const char *prefix)
+{
+    return XBOX_SetErrorFromHRESULT(prefix, GetLastError());
+}
 
-extern SDL_bool IME_HandleMessage(HWND hwnd, UINT msg, WPARAM wParam, LPARAM *lParam, struct SDL_VideoData *videodata);
-
-#endif /* SDL_windowskeyboard_h_ */
+#endif /* __WIN32__ || __WINRT__  || __XBOX__*/
 
 /* vi: set ts=4 sw=4 expandtab: */

@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2019 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -20,10 +20,14 @@
 */
 #include "../../SDL_internal.h"
 
-#if defined(SDL_VIDEO_DRIVER_WINDOWS)
+#ifndef SDL_xboxmouse_h_
+#define SDL_xboxmouse_h_
 
-extern int WIN_ShowMessageBox(const SDL_MessageBoxData *messageboxdata, int *buttonid);
+//extern HCURSOR SDL_cursor; // TODO
 
-#endif /* SDL_VIDEO_DRIVER_WINDOWS */
+extern void XBOX_InitMouse(_THIS);
+extern void XBOX_QuitMouse(_THIS);
+
+#endif /* SDL_xboxmouse_h_ */
 
 /* vi: set ts=4 sw=4 expandtab: */

@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2019 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -20,154 +20,34 @@
 */
 #include "../../SDL_internal.h"
 
-#ifdef SDL_FILESYSTEM_WINDOWS
+#ifdef SDL_FILESYSTEM_XBOX
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* System dependent filesystem routines                                */
 
-#include "../../core/xboxog/SDL_xboxog.h"
-#include <shlobj.h>
-
-#include "SDL_error.h"
-#include "SDL_stdinc.h"
+#include "../../core/xbox/SDL_xbox.h"
 #include "SDL_filesystem.h"
 
-char *SDL_GetBasePath(void)
+char *
+SDL_GetBasePath(void)
 {
-    DWORD buflen = 128;
-    WCHAR *path = NULL;
-    char *retval = NULL;
-    DWORD len = 0;
-    int i;
+    char strPath[MAX_PATH];
 
-    while (SDL_TRUE) {
-        void *ptr = SDL_realloc(path, buflen * sizeof(WCHAR));
-        if (!ptr) {
-            SDL_free(path);
-            SDL_OutOfMemory();
-            return NULL;
-        }
+	strcpy(strPath, "D:\\");
 
-        path = (WCHAR *)ptr;
-
-        len = GetModuleFileNameW(NULL, path, buflen);
-        /* if it truncated, then len >= buflen - 1 */
-        /* if there was enough room (or failure), len < buflen - 1 */
-        if (len < buflen - 1) {
-            break;
-        }
-
-        /* buffer too small? Try again. */
-        buflen *= 2;
-    }
-
-    if (len == 0) {
-        SDL_free(path);
-        WIN_SetError("Couldn't locate our .exe");
-        return NULL;
-    }
-
-    for (i = len - 1; i > 0; i--) {
-        if (path[i] == '\\') {
-            break;
-        }
-    }
-
-    SDL_assert(i > 0);  /* Should have been an absolute path. */
-    path[i + 1] = '\0'; /* chop off filename. */
-
-    retval = WIN_StringToUTF8W(path);
-    SDL_free(path);
-
-    return retval;
+    return &strPath[0];
 }
 
-char *SDL_GetPrefPath(const char *org, const char *app)
+char *
+SDL_GetPrefPath(const char *org, const char *app)
 {
-    /*
-     * Vista and later has a new API for this, but SHGetFolderPath works there,
-     *  and apparently just wraps the new API. This is the new way to do it:
-     *
-     *     SHGetKnownFolderPath(FOLDERID_RoamingAppData, KF_FLAG_CREATE,
-     *                          NULL, &wszPath);
-     */
+    char strPath[MAX_PATH];
 
-    WCHAR path[MAX_PATH];
-    char *retval = NULL;
-    WCHAR *worg = NULL;
-    WCHAR *wapp = NULL;
-    size_t new_wpath_len = 0;
-    BOOL api_result = FALSE;
+	strcpy(strPath, "D:\\");
 
-    if (!app) {
-        SDL_InvalidParamError("app");
-        return NULL;
-    }
-    if (!org) {
-        org = "";
-    }
-
-    if (!SUCCEEDED(SHGetFolderPathW(NULL, CSIDL_APPDATA | CSIDL_FLAG_CREATE, NULL, 0, path))) {
-        WIN_SetError("Couldn't locate our prefpath");
-        return NULL;
-    }
-
-    worg = WIN_UTF8ToStringW(org);
-    if (!worg) {
-        SDL_OutOfMemory();
-        return NULL;
-    }
-
-    wapp = WIN_UTF8ToStringW(app);
-    if (!wapp) {
-        SDL_free(worg);
-        SDL_OutOfMemory();
-        return NULL;
-    }
-
-    new_wpath_len = SDL_wcslen(worg) + SDL_wcslen(wapp) + SDL_wcslen(path) + 3;
-
-    if ((new_wpath_len + 1) > MAX_PATH) {
-        SDL_free(worg);
-        SDL_free(wapp);
-        WIN_SetError("Path too long.");
-        return NULL;
-    }
-
-    if (*worg) {
-        SDL_wcslcat(path, L"\\", SDL_arraysize(path));
-        SDL_wcslcat(path, worg, SDL_arraysize(path));
-    }
-    SDL_free(worg);
-
-    api_result = CreateDirectoryW(path, NULL);
-    if (api_result == FALSE) {
-        if (GetLastError() != ERROR_ALREADY_EXISTS) {
-            SDL_free(wapp);
-            WIN_SetError("Couldn't create a prefpath.");
-            return NULL;
-        }
-    }
-
-    SDL_wcslcat(path, L"\\", SDL_arraysize(path));
-    SDL_wcslcat(path, wapp, SDL_arraysize(path));
-    SDL_free(wapp);
-
-    api_result = CreateDirectoryW(path, NULL);
-    if (api_result == FALSE) {
-        if (GetLastError() != ERROR_ALREADY_EXISTS) {
-            WIN_SetError("Couldn't create a prefpath.");
-            return NULL;
-        }
-    }
-
-    SDL_wcslcat(path, L"\\", SDL_arraysize(path));
-
-    retval = WIN_StringToUTF8W(path);
-
-    return retval;
+    return &strPath[0];
 }
 
-#endif /* SDL_FILESYSTEM_WINDOWS */
+#endif /* SDL_FILESYSTEM_XBOX */
 
 /* vi: set ts=4 sw=4 expandtab: */
