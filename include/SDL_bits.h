@@ -72,7 +72,7 @@ SDL_MostSignificantBitIndex32(Uint32 x)
         return -1;
     }
     return _SDL_bsr_watcom(x);
-#elif defined(_MSC_VER)
+#elif !defined(_XBOX) && defined(_MSC_VER)
     unsigned long index;
     if (_BitScanReverse(&index, x)) {
         return index;
