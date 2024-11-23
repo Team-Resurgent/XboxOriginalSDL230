@@ -610,7 +610,6 @@ static int DSOUND_OpenDevice(_THIS, const char *devname)
                     wfmt.Format.wFormatTag = WAVE_FORMAT_EXTENSIBLE;
                     wfmt.Format.cbSize = sizeof(wfmt) - sizeof(WAVEFORMATEX);
 
-#ifndef _XBOX
                     if (SDL_AUDIO_ISFLOAT(this->spec.format)) {
                         SDL_memcpy(&wfmt.SubFormat, &SDL_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT, sizeof(GUID));
                     } else {
