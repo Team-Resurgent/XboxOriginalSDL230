@@ -60,6 +60,9 @@ static fnDirectSoundCaptureCreate8 pDirectSoundCaptureCreate8 = NULL;
 static fnDirectSoundCaptureEnumerateW pDirectSoundCaptureEnumerateW = NULL;
 #endif
 
+static const GUID SDL_KSDATAFORMAT_SUBTYPE_PCM = { 0x00000001, 0x0000, 0x0010, { 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71 } };
+static const GUID SDL_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT = { 0x00000003, 0x0000, 0x0010, { 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71 } };
+
 static void DSOUND_Unload(void)
 {
 #ifndef _XBOX
@@ -613,14 +616,6 @@ static int DSOUND_OpenDevice(_THIS, const char *devname)
                     } else {
                         SDL_memcpy(&wfmt.SubFormat, &SDL_KSDATAFORMAT_SUBTYPE_PCM, sizeof(GUID));
                     }
-#else
-					//if (SDL_AUDIO_ISFLOAT(this->spec.format)) {
-					//	wfmt.SubFormat = WAVE_FORMAT_IEEE_FLOAT;
-     //               } else {
-     //                   wfmt.SubFormat = WAVE_FORMAT_PCM;
-     //               }
-#endif
-
                     wfmt.Samples.wValidBitsPerSample = SDL_AUDIO_BITSIZE(this->spec.format);
 
                     switch (this->spec.channels) {
