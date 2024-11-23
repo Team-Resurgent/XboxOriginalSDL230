@@ -31,7 +31,9 @@
 #include "SDL_audio.h"
 #include "../SDL_audio_c.h"
 #include "SDL_directsound.h"
+#ifndef _XBOX
 #include <mmreg.h>
+#endif
 #ifdef HAVE_MMDEVICEAPI_H
 #include "../../core/windows/SDL_immdevice.h"
 #endif /* HAVE_MMDEVICEAPI_H */
@@ -605,11 +607,20 @@ static int DSOUND_OpenDevice(_THIS, const char *devname)
                     wfmt.Format.wFormatTag = WAVE_FORMAT_EXTENSIBLE;
                     wfmt.Format.cbSize = sizeof(wfmt) - sizeof(WAVEFORMATEX);
 
+#ifndef _XBOX
                     if (SDL_AUDIO_ISFLOAT(this->spec.format)) {
                         SDL_memcpy(&wfmt.SubFormat, &SDL_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT, sizeof(GUID));
                     } else {
                         SDL_memcpy(&wfmt.SubFormat, &SDL_KSDATAFORMAT_SUBTYPE_PCM, sizeof(GUID));
                     }
+#else
+					//if (SDL_AUDIO_ISFLOAT(this->spec.format)) {
+					//	wfmt.SubFormat = WAVE_FORMAT_IEEE_FLOAT;
+     //               } else {
+     //                   wfmt.SubFormat = WAVE_FORMAT_PCM;
+     //               }
+#endif
+
                     wfmt.Samples.wValidBitsPerSample = SDL_AUDIO_BITSIZE(this->spec.format);
 
                     switch (this->spec.channels) {
@@ -625,12 +636,14 @@ static int DSOUND_OpenDevice(_THIS, const char *devname)
                     case 6: /* 5.1 */
                         wfmt.dwChannelMask = SPEAKER_FRONT_LEFT | SPEAKER_FRONT_RIGHT | SPEAKER_FRONT_CENTER | SPEAKER_LOW_FREQUENCY | SPEAKER_BACK_LEFT | SPEAKER_BACK_RIGHT;
                         break;
+#ifndef _XBOX
                     case 7: /* 6.1 */
                         wfmt.dwChannelMask = SPEAKER_FRONT_LEFT | SPEAKER_FRONT_RIGHT | SPEAKER_FRONT_CENTER | SPEAKER_LOW_FREQUENCY | SPEAKER_BACK_LEFT | SPEAKER_BACK_RIGHT | SPEAKER_BACK_CENTER;
                         break;
                     case 8: /* 7.1 */
                         wfmt.dwChannelMask = SPEAKER_FRONT_LEFT | SPEAKER_FRONT_RIGHT | SPEAKER_FRONT_CENTER | SPEAKER_LOW_FREQUENCY | SPEAKER_BACK_LEFT | SPEAKER_BACK_RIGHT | SPEAKER_SIDE_LEFT | SPEAKER_SIDE_RIGHT;
                         break;
+#endif
                     default:
                         SDL_assert(0 && "Unsupported channel count!");
                         break;

@@ -41,7 +41,6 @@ extern void XBOX_RaiseWindow(_THIS, SDL_Window * window);
 extern void XBOX_MaximizeWindow(_THIS, SDL_Window * window);
 extern void XBOX_MinimizeWindow(_THIS, SDL_Window * window);
 extern void XBOX_RestoreWindow(_THIS, SDL_Window * window);
-extern void XBOX_SetWindowGrab(_THIS, SDL_Window * window, SDL_bool grabbed);
 extern void XBOX_DestroyWindow(_THIS, SDL_Window * window);
 extern void XBOX_OnWindowEnter(_THIS, SDL_Window * window);
 extern int XBOX_SetWindowHitTest(SDL_Window *window, SDL_bool enabled);

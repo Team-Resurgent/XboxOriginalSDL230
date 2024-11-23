@@ -127,8 +127,11 @@
 
 #ifndef SDL_RENDER_DISABLED
 /* define the not defined ones as 0 */
-#ifndef SDL_VIDEO_RENDER_D3D
-#define SDL_VIDEO_RENDER_D3D 0
+#ifndef SDL_VIDEO_RENDER_D3D8
+#define SDL_VIDEO_RENDER_D3D8 0
+#endif
+#ifndef SDL_VIDEO_RENDER_D3D9
+#define SDL_VIDEO_RENDER_D3D9 0
 #endif
 #ifndef SDL_VIDEO_RENDER_D3D11
 #define SDL_VIDEO_RENDER_D3D11 0
@@ -163,8 +166,10 @@
 #else /* define all as 0 */
 #undef SDL_VIDEO_RENDER_SW
 #define SDL_VIDEO_RENDER_SW 0
-#undef SDL_VIDEO_RENDER_D3D
-#define SDL_VIDEO_RENDER_D3D 0
+#undef SDL_VIDEO_RENDER_D3D8
+#define SDL_VIDEO_RENDER_D3D8 0
+#undef SDL_VIDEO_RENDER_D3D9
+#define SDL_VIDEO_RENDER_D3D9 0
 #undef SDL_VIDEO_RENDER_D3D11
 #define SDL_VIDEO_RENDER_D3D11 0
 #undef SDL_VIDEO_RENDER_D3D12
@@ -189,7 +194,8 @@
 
 #define SDL_HAS_RENDER_DRIVER \
        (SDL_VIDEO_RENDER_SW       | \
-        SDL_VIDEO_RENDER_D3D      | \
+        SDL_VIDEO_RENDER_D3D8     | \
+		SDL_VIDEO_RENDER_D3D9     | \
         SDL_VIDEO_RENDER_D3D11    | \
         SDL_VIDEO_RENDER_D3D12    | \
         SDL_VIDEO_RENDER_METAL    | \

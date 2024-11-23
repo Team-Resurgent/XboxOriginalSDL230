@@ -39,7 +39,10 @@
 /* This is included in only one place because it has a large static list of controllers */
 #include "controller_type.h"
 
-#if defined(__WIN32__) || defined(__WINGDK__)
+#if defined(__XBOX__)
+#include "../core/xboxog/SDL_xbox.h"
+#include <xtl.h>
+#elif defined(__WIN32__) || defined(__WINGDK__)
 /* Needed for checking for input remapping programs */
 #include "../core/windows/SDL_windows.h"
 

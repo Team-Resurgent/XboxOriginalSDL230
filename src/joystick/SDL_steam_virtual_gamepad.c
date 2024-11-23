@@ -25,7 +25,10 @@
 #include "SDL_joystick_c.h"
 #include "SDL_steam_virtual_gamepad.h"
 
-#ifdef __WIN32__
+#if defined(__XBOX__)
+#include "../core/xboxog/SDL_xbox.h"
+#include <xtl.h>
+#elif defined(__WIN32_)_
 #include "../core/windows/SDL_windows.h"
 #else
 #include <sys/types.h>
@@ -45,7 +48,18 @@ static Uint64 GetFileModificationTime(const char *file)
 {
     Uint64 modification_time = 0;
 
-#ifdef __WIN32__
+#if defined(__XBOX__)
+    HANDLE hFile = CreateFile(file, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
+    if (hFile != INVALID_HANDLE_VALUE) {
+        FILETIME last_write_time;
+        if (GetFileTime(hFile, NULL, NULL, &last_write_time)) {
+            modification_time = last_write_time.dwHighDateTime;
+            modification_time <<= 32;
+            modification_time |= last_write_time.dwLowDateTime;
+        }
+        CloseHandle(hFile);
+    }
+#elif defined(__WIN32__)
     WCHAR *wFile = WIN_UTF8ToStringW(file);
     if (wFile) {
         HANDLE hFile = CreateFileW(wFile, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);

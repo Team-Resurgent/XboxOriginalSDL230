@@ -20,7 +20,7 @@
 */
 #include "../SDL_internal.h"
 
-#if (SDL_VIDEO_RENDER_D3D || SDL_VIDEO_RENDER_D3D11 || SDL_VIDEO_RENDER_D3D12)
+#if (SDL_VIDEO_RENDER_D3D8 || SDL_VIDEO_RENDER_D3D9 ||SDL_VIDEO_RENDER_D3D11 || SDL_VIDEO_RENDER_D3D12)
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
@@ -78,6 +78,6 @@ Float4X4 MatrixRotationZ(float r);
 }
 #endif
 
-#endif /* (SDL_VIDEO_RENDER_D3D || SDL_VIDEO_RENDER_D3D11 || SDL_VIDEO_RENDER_D3D12) */
+#endif /* (SDL_VIDEO_RENDER_D3D8 || SDL_VIDEO_RENDER_D3D9 || SDL_VIDEO_RENDER_D3D11 || SDL_VIDEO_RENDER_D3D12) */
 
 /* vi: set ts=4 sw=4 expandtab: */

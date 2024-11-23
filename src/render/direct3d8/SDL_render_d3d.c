@@ -25,7 +25,7 @@
 #include "SDL_system.h"
 #endif
 
-#if SDL_VIDEO_RENDER_D3D && !SDL_RENDER_DISABLED
+#if SDL_VIDEO_RENDER_D3D8 && !SDL_RENDER_DISABLED
 
 #include "../../core/xboxog/SDL_xbox.h"
 
@@ -40,7 +40,7 @@
 #include "../SDL_d3dmath.h"
 #include "../../video/xboxog/SDL_xboxvideo.h"
 
-#if SDL_VIDEO_RENDER_D3D
+#if SDL_VIDEO_RENDER_D3D8
 #define D3D_DEBUG_INFO
 #endif
 
@@ -2004,7 +2004,7 @@ SDL_RenderDriver D3D_RenderDriver = {
      0,
      0}
 };
-#endif /* SDL_VIDEO_RENDER_D3D && !SDL_RENDER_DISABLED */
+#endif /* SDL_VIDEO_RENDER_D3D8 && !SDL_RENDER_DISABLED */
 
 #ifdef __XBOX__
 /* This function needs to always exist on Windows, for the Dynamic API. */
@@ -2013,7 +2013,7 @@ SDL_RenderGetD3D9Device(SDL_Renderer * renderer)
 {
     IDirect3DDevice8 *device = NULL;
 
-#if SDL_VIDEO_RENDER_D3D && !SDL_RENDER_DISABLED
+#if SDL_VIDEO_RENDER_D3D8 && !SDL_RENDER_DISABLED
     D3D_RenderData *data = (D3D_RenderData *) renderer->driverdata;
 
     /* Make sure that this is a D3D renderer */
@@ -2026,7 +2026,7 @@ SDL_RenderGetD3D9Device(SDL_Renderer * renderer)
     if (device) {
         IDirect3DDevice8_AddRef(device);
     }
-#endif /* SDL_VIDEO_RENDER_D3D && !SDL_RENDER_DISABLED */
+#endif /* SDL_VIDEO_RENDER_D3D8 && !SDL_RENDER_DISABLED */
 
     return device;
 }

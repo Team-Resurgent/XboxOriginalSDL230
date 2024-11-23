@@ -109,11 +109,6 @@ XBOX_RestoreWindow(_THIS, SDL_Window * window)
 }
 
 void
-XBOX_SetWindowGrab(_THIS, SDL_Window * window, SDL_bool grabbed)
-{
-}
-
-void
 XBOX_DestroyWindow(_THIS, SDL_Window * window)
 {
 }

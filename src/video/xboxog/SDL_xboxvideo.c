@@ -67,12 +67,6 @@ static void XBOX_SuspendScreenSaver(_THIS)
 
 /* Windows driver bootstrap functions */
 
-static int
-XBOX_Available(void)
-{
-    return (1);
-}
-
 static void
 XBOX_DeleteDevice(SDL_VideoDevice * device)
 {
@@ -97,7 +91,7 @@ XBOX_DeleteDevice(SDL_VideoDevice * device)
 }
 
 static SDL_VideoDevice *
-XBOX_CreateDevice(int devindex)
+XBOX_CreateDevice(void)
 {
     SDL_VideoDevice *device;
     SDL_VideoData *data;
@@ -172,7 +166,6 @@ XBOX_CreateDevice(int devindex)
     device->SetWindowFullscreen = NULL;
     device->SetWindowGammaRamp = NULL;
     device->GetWindowGammaRamp = NULL;
-    device->SetWindowGrab = XBOX_SetWindowGrab;
     device->DestroyWindow = XBOX_DestroyWindow;
     device->GetWindowWMInfo = NULL;
 
@@ -228,7 +221,7 @@ XBOX_CreateDevice(int devindex)
 
 
 VideoBootStrap XBOX_bootstrap = {
-    "Xbox", "SDL Xbox video driver", XBOX_Available, XBOX_CreateDevice
+    "Xbox", "SDL Xbox video driver", XBOX_CreateDevice, NULL
 };
 
 int
@@ -265,7 +258,7 @@ XBOX_VideoInit(_THIS)
     display.current_mode = current_mode;
     display.driverdata = NULL;
 
-    SDL_AddVideoDisplay(&display);
+    SDL_AddVideoDisplay(&display, SDL_FALSE);
 
     return 0;
 }

@@ -37,7 +37,10 @@
 
 #ifndef SDL_HIDAPI_DISABLED
 
-#if defined(__WIN32__) || defined(__WINGDK__)
+#if defined(__XBOX__)
+#include "../core/xboxog/SDL_xbox.h"
+#include <xtl.h>
+#elif defined(__WIN32__) || defined(__WINGDK__)
 #include "../core/windows/SDL_windows.h"
 #endif
 

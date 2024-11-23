@@ -28,7 +28,9 @@
 #include "SDL_events_c.h"
 #include "../SDL_hints_c.h"
 #include "../video/SDL_sysvideo.h"
-#if defined(__WIN32__) || defined(__GDK__)
+#if defined(__XBOX__)
+#include "../core/xboxog/SDL_xbox.h"
+#elif defined(__WIN32__) || defined(__GDK__)
 #include "../core/windows/SDL_windows.h" // For GetDoubleClickTime()
 #endif
 #if defined(__OS2__)

@@ -36,11 +36,11 @@ static DWORD WINAPI RunThread(LPVOID data)
 	return(0);
 }
 
-int SDL_SYS_CreateThread(SDL_Thread *thread, void *args)
+int SDL_SYS_CreateThread(SDL_Thread *thread)
 {
 	DWORD threadnum;
 
-	thread->handle = CreateThread(NULL, 0, RunThread, args, 0, &threadnum);
+	thread->handle = CreateThread(NULL, 0, RunThread, thread, 0, &threadnum);
 	if (thread->handle == NULL) {
 		SDL_SetError("Not enough resources to create thread");
 		return(-1);

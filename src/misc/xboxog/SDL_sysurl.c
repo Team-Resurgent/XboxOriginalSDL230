@@ -20,7 +20,7 @@
 */
 
 #include "../SDL_sysurl.h"
-#include "../../core/xboxog/SDL_xboxog.h"
+#include "../../core/xboxog/SDL_xbox.h"
 
 int SDL_SYS_OpenURL(const char *url)
 {

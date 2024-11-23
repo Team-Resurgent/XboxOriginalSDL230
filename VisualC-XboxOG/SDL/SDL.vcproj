@@ -21,7 +21,7 @@
 				Optimization="0"
 				OptimizeForProcessor="2"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)/../../include&quot;"
-				PreprocessorDefinitions="_DEBUG;_XBOX;__XBOX__;_LIB"
+				PreprocessorDefinitions="_DEBUG;_XBOX;__XBOX__;_LIB;XBOX_DEBUG_LOGGING"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
@@ -35,6 +35,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies="xbdm.lib xkbd.lib"
 				OutputFile="$(OutDir)/$(ProjectName).lib"/>
 			<Tool
 				Name="VCPostBuildEventTool"/>
@@ -69,6 +70,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies="xbdm.lib xkbd.lib"
 				OutputFile="$(OutDir)/$(ProjectName).lib"/>
 			<Tool
 				Name="VCPostBuildEventTool"/>
@@ -104,6 +106,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies="xbdm.lib xkbd.lib"
 				OutputFile="$(OutDir)/$(ProjectName).lib"/>
 			<Tool
 				Name="VCPostBuildEventTool"/>
@@ -123,7 +126,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
-				PreprocessorDefinitions="NDEBUG;_XBOX;_LIB"
+				PreprocessorDefinitions="NDEBUG;_XBOX;__XBOX__;_LIB"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
 				BufferSecurityCheck="TRUE"
@@ -138,6 +141,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies="xbdm.lib xkbd.lib"
 				OutputFile="$(OutDir)/$(ProjectName).lib"/>
 			<Tool
 				Name="VCPostBuildEventTool"/>
@@ -173,6 +177,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies="xbdm.lib xkbd.lib"
 				OutputFile="$(OutDir)/$(ProjectName).lib"/>
 			<Tool
 				Name="VCPostBuildEventTool"/>
@@ -252,6 +257,9 @@
 					Filter="">
 					<File
 						RelativePath="..\..\src\audio\directsound\SDL_directsound.c">
+					</File>
+					<File
+						RelativePath="..\..\src\audio\directsound\SDL_directsound.h">
 					</File>
 				</Filter>
 				<Filter
@@ -382,19 +390,6 @@
 						RelativePath="..\..\src\haptic\dummy\SDL_syshaptic.c">
 					</File>
 				</Filter>
-				<Filter
-					Name="xboxog"
-					Filter="">
-					<File
-						RelativePath="..\..\src\haptic\xboxog\SDL_dinputhaptic.c">
-					</File>
-					<File
-						RelativePath="..\..\src\haptic\xboxog\SDL_windowshaptic.c">
-					</File>
-					<File
-						RelativePath="..\..\src\haptic\xboxog\SDL_xinputhaptic.c">
-					</File>
-				</Filter>
 			</Filter>
 			<Filter
 				Name="hidapi"
@@ -491,19 +486,37 @@
 					Name="xboxog"
 					Filter="">
 					<File
-						RelativePath="..\..\src\joystick\xboxog\SDL_dinputjoystick.c">
-					</File>
-					<File
-						RelativePath="..\..\src\joystick\xboxog\SDL_rawinputjoystick.c">
-					</File>
-					<File
-						RelativePath="..\..\src\joystick\xboxog\SDL_windows_gaming_input.c">
-					</File>
-					<File
-						RelativePath="..\..\src\joystick\xboxog\SDL_windowsjoystick.c">
-					</File>
-					<File
-						RelativePath="..\..\src\joystick\xboxog\SDL_xinputjoystick.c">
+						RelativePath="..\..\src\joystick\xboxog\SDL_sysjoystick.c">
+						<FileConfiguration
+							Name="Debug|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Profile|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Profile_FastCap|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release_LTCG|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 			</Filter>
@@ -765,13 +778,6 @@
 						RelativePath="..\..\src\sensor\dummy\SDL_dummysensor.c">
 					</File>
 				</Filter>
-				<Filter
-					Name="xboxog"
-					Filter="">
-					<File
-						RelativePath="..\..\src\sensor\xboxog\SDL_windowssensor.c">
-					</File>
-				</Filter>
 			</Filter>
 			<Filter
 				Name="stdlib"
@@ -823,21 +829,6 @@
 				<Filter
 					Name="xboxog"
 					Filter="">
-					<File
-						RelativePath="..\..\src\thread\xboxog\SDL_syscond_cv.c">
-					</File>
-					<File
-						RelativePath="..\..\src\thread\xboxog\SDL_sysmutex.c">
-					</File>
-					<File
-						RelativePath="..\..\src\thread\xboxog\SDL_syssem.c">
-					</File>
-					<File
-						RelativePath="..\..\src\thread\xboxog\SDL_systhread.c">
-					</File>
-					<File
-						RelativePath="..\..\src\thread\xboxog\SDL_systls.c">
-					</File>
 				</Filter>
 			</Filter>
 			<Filter
@@ -1633,10 +1624,19 @@
 					Name="xboxog"
 					Filter="">
 					<File
-						RelativePath="..\..\src\thread\xboxog\SDL_sysmutex_c.h">
+						RelativePath="..\..\src\thread\xboxog\SDL_sysmutex.c">
+					</File>
+					<File
+						RelativePath="..\..\src\thread\xboxog\SDL_syssem.c">
+					</File>
+					<File
+						RelativePath="..\..\src\thread\xboxog\SDL_systhread.c">
 					</File>
 					<File
 						RelativePath="..\..\src\thread\xboxog\SDL_systhread_c.h">
+					</File>
+					<File
+						RelativePath="..\..\src\thread\xboxog\SDL_systls.c">
 					</File>
 				</Filter>
 			</Filter>

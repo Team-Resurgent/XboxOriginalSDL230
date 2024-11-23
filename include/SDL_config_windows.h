@@ -287,8 +287,8 @@ typedef unsigned int uintptr_t;
 #define SDL_VIDEO_DRIVER_DUMMY  1
 #define SDL_VIDEO_DRIVER_WINDOWS    1
 
-#ifndef SDL_VIDEO_RENDER_D3D
-#define SDL_VIDEO_RENDER_D3D    1
+#ifndef SDL_VIDEO_RENDER_D3D9
+#define SDL_VIDEO_RENDER_D3D9    1
 #endif
 #if !defined(SDL_VIDEO_RENDER_D3D11) && defined(HAVE_D3D11_H)
 #define SDL_VIDEO_RENDER_D3D11  1

@@ -77,7 +77,7 @@ VOID Mouse_RefreshDeviceList()
 }
 
 static Uint32
-XBOX_UpdateMouseState()
+XBOX_GetGlobalMouseState(int *x, int *y)
 {
 	Uint32 retval = 0;
 	int i, j;
@@ -155,13 +155,6 @@ XBOX_UpdateMouseState()
         }
     }
 
-    return retval;
-}
-
-static Uint32
-XBOX_GetGlobalMouseState(int *x, int *y)
-{
-	XBOX_UpdateMouseState();
 	*x = g_MouseInput.cMickeysX;
 	*y = g_MouseInput.cMickeysY;
 
@@ -285,7 +278,6 @@ XBOX_InitMouse(_THIS)
 		pMouse->SetRelativeMouseMode = XBOX_SetRelativeMouseMode;
 		pMouse->CaptureMouse = XBOX_CaptureMouse;
 		pMouse->GetGlobalMouseState = XBOX_GetGlobalMouseState;
-		pMouse->UpdateMouseState = XBOX_UpdateMouseState;
 	}
 
     SDL_SetDefaultCursor(XBOX_CreateDefaultCursor());

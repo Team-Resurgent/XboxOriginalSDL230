@@ -27,7 +27,7 @@
 /* WIKI CATEGORY: - */
 
 /* Add any platform that doesn't build using the configure system. */
-#if defined(_XBOX)
+#if defined(__XBOX__)
 #include "SDL_config_xboxog.h"
 #elif defined(__WIN32__)
 #include "SDL_config_windows.h"

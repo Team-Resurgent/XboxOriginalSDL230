@@ -80,7 +80,7 @@ typedef unsigned int uintptr_t;
 #define HAVE_DSOUND_H 1
 //#define HAVE_DXGI_H 1
 #define HAVE_XINPUT_H 1
-#define HAVE_MMDEVICEAPI_H 1
+//#define HAVE_MMDEVICEAPI_H 1
 #define HAVE_AUDIOCLIENT_H 1
 #define HAVE_ENDPOINTVOLUME_H 1
 
@@ -207,8 +207,8 @@ typedef unsigned int uintptr_t;
 //#define SDL_VIDEO_DRIVER_DUMMY  1
 #define SDL_VIDEO_DRIVER_XBOX  1
 
-#ifndef SDL_VIDEO_RENDER_D3D
-#define SDL_VIDEO_RENDER_D3D  1
+#ifndef SDL_VIDEO_RENDER_D3D8
+#define SDL_VIDEO_RENDER_D3D8  1
 #endif
 #ifndef SDL_VIDEO_RENDER_D3D11
 #define SDL_VIDEO_RENDER_D3D11  0
