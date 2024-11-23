@@ -4,6 +4,7 @@
 	Version="7.10"
 	Name="loopwave"
 	ProjectGUID="{A02DEE2A-FEBF-48A7-AC38-2A019495836C}"
+	RootNamespace="loopwave"
 	Keyword="XboxProj">
 	<Platforms>
 		<Platform
@@ -34,9 +35,10 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="xapilibd.lib d3d8d.lib d3dx8d.lib xgraphicsd.lib dsoundd.lib dmusicd.lib xactengd.lib xsndtrkd.lib xvoiced.lib xonlined.lib xboxkrnl.lib xbdm.lib"
+				AdditionalDependencies="xapilibd.lib d3d8d.lib d3dx8d.lib xgraphicsd.lib dsoundd.lib dmusicd.lib xactengd.lib xsndtrkd.lib xvoiced.lib xonlined.lib xboxkrnl.lib xbdm.lib SDL2.lib"
 				OutputFile="$(OutDir)/$(ProjectName).exe"
 				LinkIncremental="2"
+				AdditionalLibraryDirectories="&quot;$(ProjectDir)..\..\SDL\Debug&quot;"
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile="$(OutDir)/$(ProjectName).pdb"
 				SubSystem="2"
@@ -269,14 +271,14 @@
 			<File
 				RelativePath="..\..\..\Test\loopwave.c">
 			</File>
-			<File
-				RelativePath="..\..\..\test\testutils.c">
-			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File
+				RelativePath="..\..\..\test\testutils.c">
+			</File>
 		</Filter>
 	</Files>
 	<Globals>

@@ -33,7 +33,7 @@
 
 #if defined(_MSC_VER)
 
-#ifndef __FLTUSED__
+#if !defined(__FLTUSED__) && !defined(__XBOX__)
 #define __FLTUSED__
 __declspec(selectany) int _fltused = 1;
 #endif
